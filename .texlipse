@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Tue Feb 28 16:29:33 CET 2012
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=FuVar.tex
+outputFile=FuVar.pdf
+langSpell=de
+markDer=true
+srcDir=
