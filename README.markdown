@@ -1,3 +1,3 @@
 # FuVar - Funktionen mehrerer Variablen
 
-Bernhard Grauer
+Matthias Diethelm
