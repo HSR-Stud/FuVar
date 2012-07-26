@@ -1,0 +1,105 @@
+\section{Mehrfache Integrale \formelbuch{67}}
+\subsection{Oberflächenberechnung\formelbuch{73}}
+\begin{tabular}{|p{5.5 cm}|p{10cm}|}
+	\hline
+	\begin{minipage}{5.5cm}
+    	\vspace{0.1cm}
+    	Oberflächenintegral\\
+    	$f:G\rightarrow \mathbb{R}$
+    	\vspace{0.1cm} 
+    \end{minipage}&
+	\begin{minipage}{10cm}
+    	\vspace{0.1cm}
+		$F = \iint\limits_G \sqrt{(\sprt{x})^2+(\sprt{y})^2+1}\cdot d\mu$
+    	\vspace{0.1cm}
+    \end{minipage}\\
+	\hline
+	\begin{minipage}{5.5cm}
+    	\vspace{0.1cm}
+    	Oberflächenintegral\\
+    	$f:G\rightarrow \mathbb{R}^3$
+    	\vspace{0.1cm} 
+    \end{minipage}&
+	\begin{minipage}{10cm}
+    	\vspace{0.1cm}
+		$F=\iint\limits_G\left|
+		\begin{pmatrix}
+	    	\fsprt{x}{f_1}\\
+	    	\fsprt{x}{f_2}\\
+	    	\fsprt{x}{f_3}\\              
+	    \end{pmatrix}
+		\times
+		\begin{pmatrix}
+	      	\fsprt{y}{f_1}\\
+	    	\fsprt{y}{f_2}\\
+	    	\fsprt{y}{f_3}\\   	
+	    \end{pmatrix}\right|d\mu=
+		\iint\limits_G |D_1f\times D_2f|\cdot d\mu$	
+    	\vspace{0.1cm}
+    \end{minipage}\\
+	\hline
+	\begin{minipage}{5.5cm}
+  		Mantelfläche eines Rotationskörpers in Zylinderkoordinaten    
+    \end{minipage}&
+	\begin{minipage}{10cm}
+    	\vspace{0.1cm}
+		$M = 2\pi\int\limits_0^h\varrho(z)\sqrt{1+\varrho'(z)^2}\cdot dz$
+    	\vspace{0.1cm}
+    \end{minipage}\\
+	\hline
+	Polarkoordinaten &
+	\begin{minipage}{10cm}
+    	\vspace{0.1cm}
+		$F=\iint\limits_G f(r,\varphi)\cdot \textcolor{blue}{r} \cdot dr d\varphi $
+    	\vspace{0.1cm}
+    \end{minipage}\\
+	\hline
+\end{tabular}
+
+\subsection{Volumenberechnung\formelbuch{67 \& 76}}
+\begin{tabular}{|p{6 cm}|p{10cm}|}
+	\hline
+	Allgemein mit Variablentransformation &
+	\begin{minipage}{10cm}
+    	\vspace{0.1cm}
+		$V=\iiint\limits_G f(x,y,z)\cdot dxdydz=\iiint\limits_G f(g(u,v,w))\cdot
+		\textcolor{blue}{detDf}\cdot dudvdw$
+    	\vspace{0.1cm}
+    \end{minipage}\\
+	\hline
+	Zylinderkoordinaten &
+	\begin{minipage}{10cm}
+    	\vspace{0.1cm}
+		$V=\iiint\limits_G f(r,\varphi,z)\cdot \textcolor{blue}{r} \cdot
+		dr d\varphi dz$
+    	\vspace{0.1cm}
+    \end{minipage}\\
+	\hline
+	Kugelkoordinaten &
+	\begin{minipage}{10cm}
+    	\vspace{0.1cm}
+		$V=\iiint\limits_G f(r,\varphi,\vartheta)\cdot \textcolor{blue}{r^2
+		\sin\vartheta} \cdot dr d\varphi d\vartheta$
+    	\vspace{0.1cm}
+    \end{minipage}\\
+	\hline	
+\end{tabular}
+
+\subsection{Schwerpunkt\formelbuch{78} und Trägheitsmoment\formelbuch{79} }
+$\boxed{\vec{S}=\begin{pmatrix}
+	x_s\\
+	y_s\\
+	z_s                                            
+\end{pmatrix}=\frac{1}{m}\iiint\limits_G \varrho(x,y,z) \cdot
+\begin{pmatrix}
+	x\\
+	y\\
+	z                                            
+\end{pmatrix}\cdot dxdydz \quad m=\iiint\limits_G \varrho(x,y,z) \cdot
+dxdydz}\\\boxed{I=\iiint\limits_G \varrho(x,y,z)\cdot
+\underbrace{(x^2+y^2)}_{k}\cdot
+dxdydz}\quad k$ entspricht dem Abstand zur Rotationsachse hier die $Z$-Achse
+
+
+
+

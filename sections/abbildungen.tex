@@ -1,0 +1,36 @@
+\section{Abbildungen ($\mathbb{R}^n \rightarrow \mathbb{R}^m$)
+\formelbuch{55}}
+\subsection{Ableitungen\formelbuch{55}}
+$Df(x) = \begin{pmatrix}
+    	\fprt{f_1}{x_1}(x) & \ldots & \fprt{f_1}{x_n}(x)\\
+    	\vdots && \vdots\\
+    	\fprt{f_m}{x_1}(x) & \ldots & \fprt{f_m}{x_n}(x)
+	\end{pmatrix}=\dfrac{\partial(f_1,\ldots,f_m)}{\partial(x_1,\ldots,x_n)}
+	\quad \Rightarrow \quad$ Jacobi-Matrix (Ableitung in alle Koordinatenrichungen)
+\subsection{Kettenregel\formelbuch{56}}
+\begin{minipage}{3cm}
+	$f: \mathbb{R}^n \rightarrow \mathbb{R}^m$\\
+	$g: \mathbb{R}^m \rightarrow \mathbb{R}^r$
+\end{minipage}
+\begin{minipage}{7cm}
+	$\boxed{h=D(g\circ f)(x)=Dg(f(x_0))\cdot Df(x_0)}$
+\end{minipage}
+\begin{minipage}{4cm}
+	$h: \mathbb{R}^n \rightarrow \mathbb{R}^r$
+\end{minipage}
+
+\subsection{Volumenänderung\formelbuch{58}}
+$\Delta V = \begin{vmatrix}
+    	\fprt{f_1}{x_1}(x) & \ldots & \fprt{f_1}{x_n}(x)\\
+    	\vdots && \vdots\\
+    	\fprt{f_m}{x_1}(x) & \ldots & \fprt{f_m}{x_n}(x)
+		\end{vmatrix}=\left|\dfrac{\partial(f_1,\ldots,f_m)}
+		{\partial(x_1,\ldots,x_n)}\right|= det Df$
+
+\subsection{Newtonverfahren\formelbuch{60}}
+Mit dem Newtonverfahren können rekursiv Nullstellen approximiert werden.\\\\
+$\boxed{\vec{x}_{neu}=\vec{x}_{alt}-(Df(\vec{x}_{alt}))^{-1}\cdot
+(f(\vec{x}_{alt})-\vec{y}_{Ziel})}\qquad$ allgemein\\
+$\boxed{x_{neu}=x_{alt}-(f'(x_{alt}))^{-1}\cdot
+(f(x_{alt})-y_{Ziel})}\qquad$ (1- Dimensional) wird
+rekursiv ausgeführt, bis nötige Genauigkeit da ist.

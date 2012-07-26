@@ -1,0 +1,75 @@
+\section{Kurven ($\mathbb{R} \rightarrow \mathbb{R}^n$)
+\formelbuch{41}}
+\subsection{Parametertransformation\formelbuch{42}}
+Tangentenrichtung ist unabhängig von der Parametrisierung der Kurve. Die Länge
+jedoch nicht. Ist $g$ eine Kurve, beschreibt $f\circ g$ die gleiche Kurve mit
+einer anderen Parametrisierung. Der Tangentialvektor ist somit:\\
+$$\frac{d(f\circ g)}{dt}(t_0)=\frac{df}{dt}(g(t_0))\frac{dg}{dt}(t_0)=
+\frac{df}{dt}(g(t_0))g'(t_0)$$\\
+die Länge des Vektors wird also mit dem Faktor $f'(t_0)$ gestreckt oder
+gestaucht.
+
+\subsection{Kurvenlänge\formelbuch{42}}
+\begin{tabular}{|l||l|l|}
+\hline
+& \textbf{Formel} & \textbf{Bedingung(en)}\\
+\hline
+\hline
+\textbf{Länge von $a$ nach $b$} &
+	\begin{minipage}{5cm}
+    	\vspace{0.1cm}
+		$L=\int\limits_a^b|{f'(\tau)}|d\tau$ 
+		\vspace{0.1cm}
+    \end{minipage}&
+rektifizierbar $\quad\Rightarrow\quad f'(t)$ integrierbar\\
+\hline
+\textbf{Länge in Abhängigkeit der Zeit} &
+	\begin{minipage}{5cm}
+    	\vspace{0.1cm}
+		$s(t)=\int\limits_a^t|{f'(\tau)}|d\tau$ 
+		\vspace{0.1cm}
+    \end{minipage}&
+\begin{minipage}{7cm}
+	rektifizierbar $\quad\Rightarrow\quad f'(t)$ integrierbar\\
+	regulär $\qquad\quad\;\;\Rightarrow\quad f'(t)\neq 0$
+\end{minipage}\\
+\hline
+\end{tabular}\vspace{0.5cm}\\
+
+\textbf{Kurve in Kurvenlängenparameter transformieren}
+\begin{enumerate}
+  \item Prüfen ob $f'(t)\neq 0$ \& integrierbar ist, falls nicht kann die Kurve
+  nicht transformiert werden.
+  \item $s(t)$ berechnen.
+  \item Umkehrfunktion $s(t)^{-1}$ berechnen.
+  \item $t(s)$ in $f$ einsetzen $\Rightarrow f(t(s))= f\circ s(t)^{-1}$
+\end{enumerate}
+\vspace{0.5cm}
+\textbf{Eigenschaften für Kurvenlängenparameter}\\
+Eine Kurve besitzt Kurvenlängenparameter wenn folgendes gilt:\\
+$$\left|\frac{df}{dt}(t)\right|=1$$
+
+\subsection{Krümmung \& Krümmungskreisradius\formelbuch{45}}
+\begin{tabular}{|l|l|l|}
+	\hline
+	& mit Kurvenlägenparameter & ohne Kurvenlängenparameter\\
+	\hline
+	Krümmung &
+	$\kappa(s)=|f''(s)|$ &
+	\begin{minipage}{5cm}
+    	\vspace{0.1cm}
+		$\kappa(t)=\dfrac{|f'(t) \times f''(t)|}{|f'(t)|^3}$\\ 
+		\vspace{0.1cm}
+    \end{minipage}\\	
+	\hline
+	Krümmungskreisradius &
+	$r(s)=\dfrac{1}{\kappa(s)}=\dfrac{1}{|f''(s)|}$ &
+	\begin{minipage}{5cm}
+    	\vspace{0.1cm}
+		$r(t)=\dfrac{1}{\kappa(t)}=\dfrac{|f'(t)|^3}{|f'(t) \times
+		f''(t)|}$    
+		\vspace{0.1cm}
+    \end{minipage}\\
+	\hline
+\end{tabular}
+\newpage

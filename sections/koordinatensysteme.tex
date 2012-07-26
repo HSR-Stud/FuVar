@@ -1,0 +1,86 @@
+\subsection{Koordinatensysteme}
+\begin{tabular}{|p{2.5cm}||p{3cm}|p{4.2cm}|p{7.5cm}|}
+	\hline
+	$f(x,y,(z))\quad\rightarrow$ &
+	\begin{minipage}{2.4cm}
+    	\vspace{0.1cm}
+		$f(r,\varphi)\quad$\textbf{Polar} 
+    	\vspace{0.1cm}    	
+    \end{minipage}& 
+	$f(r,\varphi,z)\quad$ \textbf{Zylinder} &
+	$f(r,\varphi,\vartheta)\quad$\textbf{Kugel}\\
+	\hline
+	\hline
+	Bilder &
+	\begin{minipage}{3cm}
+    	\includegraphics[width=3cm]{../FuVar/bilder/Ebene_polarkoordinaten.png}
+    \end{minipage}&
+	\begin{minipage}{3cm}
+    	\includegraphics[width=4.2cm]{../FuVar/bilder/Zylinderkoordinaten.png}
+    \end{minipage}&
+	\begin{minipage}{3cm}
+    	\includegraphics[width=5cm]{../FuVar/bilder/Kugelkoordinaten.png}
+    \end{minipage}\\
+	\hline
+	Umrechnungs- formeln &
+	\begin{minipage}{3cm}
+    \vspace{0.1cm}
+		$x=r\cos\varphi$\\
+		$y=r\sin\varphi$    
+    \vspace{0.1cm}
+    \end{minipage}&	
+	\begin{minipage}{4.2cm}
+    \vspace{0.1cm}
+    	$x=r\cos\varphi$\\
+    	$y=r\sin\varphi$\\
+    	$z=z$
+    \vspace{0.1cm}
+    \end{minipage}&	
+	\begin{minipage}{7.5cm}
+    \vspace{0.1cm}
+    	$x=r\sin\vartheta\cos\varphi$\\
+    	$y=r\sin\vartheta\sin\varphi$\\
+    	$z=r\cos\vartheta$
+    \vspace{0.1cm}
+    \end{minipage}\\
+	\hline
+	Jacobi-Matrix $Df$ &
+	\begin{minipage}{3cm}
+    \vspace{0.1cm}
+		$\begin{pmatrix}
+         	\cos\varphi & -r\sin\varphi\\
+         	\sin\varphi & r\cos\varphi
+         \end{pmatrix}$
+    \vspace{0.1cm}
+    \end{minipage}&	
+	\begin{minipage}{4.2cm}
+    \vspace{0.1cm}
+		$\begin{pmatrix}
+         	\cos\varphi & -r\sin\varphi & 0\\
+         	\sin\varphi & r\cos\varphi & 0\\
+         	0 & 0 & 1
+         \end{pmatrix}$
+    \vspace{0.1cm}
+    \end{minipage}&	
+	\begin{minipage}{7.5cm}
+    \vspace{0.1cm}
+		$\begin{pmatrix}
+         	\sin\vartheta\cos\varphi & -r\sin\vartheta\sin\varphi &
+         	r\cos\vartheta\cos\varphi\\
+         	\sin\vartheta\sin\varphi & r\sin\vartheta\cos\varphi &
+         	r\cos\vartheta\sin\varphi\\
+         	\cos\vartheta & 0 & -r\sin\vartheta
+         \end{pmatrix}$
+    \vspace{0.1cm}
+    \end{minipage}\\
+	\hline
+	\begin{minipage}{2.5cm}
+    	\vspace{0.1cm}
+  		$detDf$   
+  		\vspace{0.1cm}
+    \end{minipage}&
+		$r$ &
+		$r$ &
+		$r^2\sin\vartheta$\\
+	\hline	
+\end{tabular}

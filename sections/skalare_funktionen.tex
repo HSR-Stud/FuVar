@@ -1,0 +1,120 @@
+\section{Skalare Funktionen ($\mathbb{R}^n \rightarrow \mathbb{R}$)
+\formelbuch{17}}
+
+\subsection{Ableitungen\formelbuch{21}}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{partielle Ableitung} & \textbf{Gradient} & \textbf{Richtungsableitung}\\
+\hline
+\begin{minipage}{5.5cm}
+	\vspace{0.2cm}
+	$\dprt{x_1}(x_1,\ldots,x_n)= \sprt{x_1}(x_1,\ldots,x_n)$
+	\vspace{0.2cm}
+\end{minipage}&
+\begin{minipage}{6cm}
+	$\gradient f(x_1,\ldots,x_n)= \left(\dprt{x_1}, \,\ldots\,,
+	\dprt{x_n}\right)$ \end{minipage}&
+\begin{minipage}{6.5cm}
+	\vspace{0.1cm}
+	$D_{\vec{v}}f(x_0,y_0)=\frac{d}{dt}f(x_0+tv_x, y_0+tv_y)|_{t=0}$
+	\vspace{0.2cm}\\
+	Falls $f$ im Punkt differenzierbar ist gilt: \\
+	$D_{\vec{v}}f(x_1,\ldots,x_n)=\gradient f(x_1,\ldots,x_n) \circ \vec{v}$
+	\vspace{0.2cm}
+\end{minipage}\\
+\hline
+\begin{minipage}{5.5cm}
+	\vspace{0.2cm}
+	partielle Ableitung der Funktion $f$ nach dem Parameter $x_1$
+	\vspace{0.2cm}
+\end{minipage}&
+\begin{minipage}{5.5cm}
+	Vektor der partiellen Ableitungen von $f$
+\end{minipage}&
+\begin{minipage}{5.5cm}
+	Steigung der Funktion $f$ in Richtung des Vektors $\vec{v}$
+\end{minipage}\\
+\hline
+\end{tabular}
+
+\subsection{Tangentialebene\formelbuch{28}}
+$\boxed{g(x,y)=f(x_0,y_0)+\dprt{x}(x_0,y_0)\cdot(x-x_0)+\dprt{y}(x_0,y_0)\cdot(y-y_0)}
+\quad \Rightarrow \quad$ Tangentialebene im Punkt $(x_0,y_0,f(x_0,y_0))$\\ \\
+$\boxed{\vec{n}(x_0,y_0)=
+\begin{pmatrix}
+	\sprt{x}(x_0,y_0)\\
+	\sprt{y}(x_0,y_0)\\
+	-1\\                         
+\end{pmatrix}} \quad \Rightarrow \quad$ Normalenvektor der Tangentialebene
+
+\subsection{Niveaulinien und Falllinien\formelbuch{30}}
+\textbf{Falllinien, Orthogonaltrajektorien}\\
+Falllinien sind Kurven, die in jedem Punkt in Richtung max. Zunahme von f
+verlaufen\\
+$\Rightarrow \gradient f$ steht tangential zur Falllinie\\\\
+$\boxed{y'(x)= \dfrac{\prt{y}}{\prt{x}}} \quad
+\Rightarrow \quad$ Steigung der Falllinie $y(x)$\\\\
+Durch lösen dieser Differentialgleichung erhält man
+die Lösungskurve $y(x)$\\ \\
+\textbf{Niveaulinien}\\
+$\gradient f \perp $ Niveaulinie\\\\
+$\boxed{y'(x)=- \dfrac{\prt{x}}{\prt{y}}}\quad
+\Rightarrow \quad$ Steigung der Niveaulinie $y(x)$\\\\
+Durch lösen dieser Differentialgleichung erhält man
+die Lösungskurve $y(x)$
+
+\subsection{Zusammengesetzte Funktionen\formelbuch{34}}
+$\boxed{\gradient(g\circ f)(x)=g'(f(x))\cdot \gradient f(x)}$
+\newpage
+
+\subsection{Extremalprobleme\formelbuch{36}}
+Extremalstellen einer Funktion $f(x,y)$ bestimmen.\\ \\
+\textbf{Allgemein}\
+	\begin{enumerate}      
+    	\item $ \gradient f(x_0,y_0) = 0 \quad \Longrightarrow \quad $ Kandidaten für Extremalstelle
+    	\item   Eigenwerte der symmetrischen Matrix $A = \begin{pmatrix}
+    			\partial_{x_1} \partial_{x_1} f & \ldots & \partial_{x_1} \partial_{x_n}
+    			f\\ \vdots && \vdots\\
+    			\partial_{x_n} \partial_{x_1} & \ldots & \partial_{x_n} \partial_{x_n} f
+    			\end{pmatrix} $ bestimmen
+		\item Sind alle Eigenwerte  $\begin{cases}
+                                 		< 0 & \text{Maximalstelle} \\
+                                 		= 0 & \text{wird nicht behandelt} \\
+                                 		> 0 & \text{Minimalstelle}                                 		
+                                    \end{cases}$
+	\end{enumerate}
+\textbf{Zwei Dimensionen}\\
+
+	\begin{enumerate}      
+    	\item $ \gradient f(x_0,y_0) = 0 \quad \Longrightarrow \quad $ Kandidaten für Extremalstelle
+    	\item Symmetrische Matrix $A = \begin{pmatrix} \partial_x^2 f(x_0,y_0) & \partial_x \partial_y
+    	f(x_0,y_0) \\ \partial_y \partial_x f(x_0,y_0) & \partial_y^2 f(x_0,y_0) \end{pmatrix} $ bestimmen
+		\item Die verschiedenen Kandidaten in $A$ einsetzen und für jeden Schritte 4
+		und 5 durchführen
+		\item Determinante $\det A \begin{cases}
+                                 		< 0 & \text{Sattelpunkt} \\
+                                 		= 0 & \text{wird nicht behandelt} \\
+                                 		> 0 & \text{Minimal- oder Maximalstelle}                                 		
+                                    \end{cases}$
+		\item Spur (Summe aller Diagonalelemente) $A \begin{cases}
+                                                   		< 0 & \text{Maximalstelle}     \\
+                                                   		= 0 & \text{wird nicht
+                                                   		behandelt} \\
+                                                   		> 0 & \text{Minimalstelle}
+                                                   		\end{cases}$
+	\end{enumerate}
+
+\subsubsection{Extremstellen auf Randwerten \formelbuch{38}}
+\begin{tabular}{lll}
+	\begin{minipage}{3.5cm}
+		$\boxed{\gradient f - \lambda \gradient g = 0}$		
+	\end{minipage} &
+	\begin{minipage}{4.7cm}
+		$f: $ zu maximierende Funktion\\
+		$g: $ Funktion des Randes	
+    \end{minipage} &
+	\begin{minipage}{11cm}
+		1. Gleichung unter der Bedingung  $g=0$ auflösen\\
+		2. Lösungen durch einsetzen in $f$ auf Min o. Max untersuchen
+    \end{minipage}
+\end{tabular}

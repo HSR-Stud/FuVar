@@ -1,0 +1,7 @@
+/tmp
+FuVar.pdf
+*.synctex
+*.preview.pdf
+*.aux
+*.log
+*.out

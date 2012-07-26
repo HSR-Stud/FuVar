@@ -1,0 +1,145 @@
+\section{Vektorfelder\formelbuch{83}}
+Ein Vektorfeld ist eine Abbildung $\vec{v}:\mathbb{R}^n\rightarrow
+\mathbb{R}^n$, welche jedem Punkt des Raumes einen Vektor anheftet.
+\subsection{Wegintegral\formelbuch{83}}
+Ist $\vec{v}$ ein Vektorfeld und $C:\vec{c}=\vec{c}(t),a\leq t \leq b$ eine
+Kurve, dann wird das Wegintegral wie folgt berechnet:\\\\
+$\boxed{\int\limits_C\vec{v}\cdot d\vec{s}=
+\int\limits_a^b\vec{v}(\vec{c}(t))\cdot \dot{\vec{c}}(t)\cdot dt}$\\\\
+
+\textbf{Eigenschaften des Wegintegrals}
+\begin{itemize}
+  \item Ist $C$ eine geschlossene Kurve, also $\vec{c}(a)=\vec{c}(b)$, spricht
+  man von einem \textbf{Umlaufintegral} und verwendet folgende Definition:
+  $\oint\limits_C \vec{v}\cdot d\vec{s}$
+  \item Ist $C=C_1+C_2$ gilt folgendes:$\quad\int\limits_C \vec{v}\cdot
+  d\vec{s}=\int\limits_{C_1} \vec{v}\cdot d\vec{s}+\int\limits_{C_2}
+  \vec{v}\cdot d\vec{s}$
+  \item Wird $C$ in Gegenrichtung durchlaufen gilt folgendes:
+  $\quad\int\limits_C \vec{v}\cdot
+  d\vec{s}=-\int\limits_{-C} \vec{v}\cdot d\vec{s}$
+\end{itemize}
+
+\subsection{Konservative Felder / Potentialfelder\formelbuch{84}}
+Ein Vektorfeld $\vec{v}$ heisst \textit{konservativ}, wenn das Wegintegral
+unabhängig vom gewählten Weg ist.\\\\
+$\Rightarrow\qquad \boxed{\oint_C \vec{v}\cdot d\vec{s}=0}\qquad\boxed{
+\int\limits_{Weg_1\, A\rightarrow B} \vec{v}\cdot d\vec{s}=\int\limits_{Weg_2\,
+A\leadsto B} \vec{v}\cdot d\vec{s}=\int\limits_A^B \vec{v}\cdot
+d\vec{s}}\qquad\boxed{\rotation (\vec{v})=0}$\\\\\\	
+\textbf{Es gelten folgende zwei Sätze:}
+\begin{itemize}
+  \item Ist $\vec{v}=\gradient f$, dann ist $\vec{v}$
+  \textit{konservativ} und es gilt: $\quad\int\limits_A^B \vec{v}\cdot d\vec{s}=f(B)-f(A)$
+  \item Ist $\vec{v}$ \textit{konservativ}, dann gibt es eine Funktion $f$ so,
+  dass $\vec{v}=\gradient f$.
+\end{itemize}
+
+\subsection{Rotation\formelbuch{86 \& 92}}
+Interpretiert man dieses Feld als Strömungsfeld, so gibt die Rotation für jeden
+Ort an, wie schnell und um welche Achse ein mitschwimmender Körper rotieren
+würde. Ein Vektorfeld, dessen Rotation überall null ist, nennt man
+\textit{wirbelfrei}.\\\\
+\begin{minipage}{8cm}
+	\textbf{2-Dimensional}\\\\
+	$\boxed{\rotation(u,v)=\fprt{v}{x}-\fprt{u}{y}}$
+\end{minipage}
+\begin{minipage}{8cm}
+	\textbf{3-Dimensional}\\\\
+	$\boxed{\rotation(u,v,w)=\bigtriangledown\times
+	\vec{v}=
+	\begin{pmatrix}
+    	\partial_x\\
+    	\partial_y\\
+    	\partial_z
+    \end{pmatrix}\times
+	\begin{pmatrix}
+    	v_x\\
+    	v_y\\
+    	v_z
+    \end{pmatrix}=
+	\begin{pmatrix}
+    	\fsprt{y}{w}-\fsprt{z}{v}\\
+    	\fsprt{z}{u}-\fsprt{x}{w}\\
+    	\fsprt{x}{v}-\fsprt{y}{u}
+    \end{pmatrix}}$
+\end{minipage} \\
+
+\subsection{Divergenz\formelbuch{96}}
+Interpretiert man dieses Feld als Strömungsfeld, so gibt die Divergenz für jede
+Stelle die Tendenz an, ob ein Teilchen in der Nähe zu diesem Punkt hin- bzw.
+von diesem Punkt wegfließt. Es sagt damit aus, ob und wo das Vektorfeld Quellen
+(Divergenz größer als Null) oder Senken (Divergenz kleiner als Null) hat. Ist
+die Divergenz überall gleich Null, so bezeichnet man das Feld als
+\textit{quellenfrei}.\\\\
+$\boxed{\divergenz \vec{v}=\bigtriangledown\circ \vec{v}=
+	\begin{pmatrix}
+    	\partial_{x_1}\\
+    	\vdots\\
+    	\partial_{x_n}
+    \end{pmatrix}\cdot
+	\begin{pmatrix}
+    	v_{x_1}\\
+    	\vdots\\
+    	v_{x_n}
+    \end{pmatrix}=
+\sum\limits_{i=1}^n \fprt{v_i}{x_i}}$
+
+\subsection{Fluss\formelbuch{93}}
+Der Fluss des Vektorfeldes $\vec{v}$ durch das Flächenstück G mit
+Parametrisierung $f:U\rightarrow\mathbb{R}^3$ ist:\\\\
+$\boxed{\iint\limits_G\vec{v}\cdot d\vec{n}=\iint\limits_U \vec{v}\cdot
+(\sprt{u}\times\sprt{v}) dudv}$
+
+\subsection{Integralsätze}
+	\begin{tabular}{|p{0.4cm}||p{4cm}|p{5.7cm}|p{7cm}|}
+	\hline
+	& \textbf{Satz} & \textbf{Formel} & \textbf{Beschreibung}\\
+	\hline
+	\hline
+	\begin{sideways}2-D \qquad \end{sideways} &
+  	Die Greensche Formel \formelbuch{88} &
+	\begin{minipage}{6.7cm}
+	    \vspace{0.1cm}
+		$\int\limits_{\partial G}\vec{v}\cdot d\vec{s}=\iint\limits_G \rotation
+		\vec{v}\cdot d\mu$	 		    
+	    \vspace{0.1cm}   
+    \end{minipage}&
+	\begin{minipage}{7cm}
+	    \vspace{0.1cm}
+		Die Greensche Formel beschreibt den Zusammenhang zwischen einem
+		\textbf{Wegintegral} und einem \textbf{Oberflächenintegral}.
+	    \vspace{0.1cm}   
+    \end{minipage}\\
+	\hline
+	\begin{sideways}3-D \qquad \end{sideways} &
+	Der Satz von Stokes \formelbuch{94} &
+	\begin{minipage}{6.7cm}
+    	\vspace{0.1cm}
+		$\int\limits_{\partial G}\vec{v}\cdot d\vec{s}=\iint\limits_G \rotation
+		\vec{v}\cdot d\vec{n}$		 
+		\vspace{0.1cm} 
+    \end{minipage}&
+	\begin{minipage}{7cm}
+    	\vspace{0.1cm}
+		Der Satz von Stokes definiert einen Zusammenhang zwischen einem
+		\textbf{Wegintegral} und einem \textbf{Flussintegral}.	    
+	    \vspace{0.1cm}   
+    \end{minipage}\\
+	\hline
+	\begin{sideways}3-D \qquad \end{sideways} &
+	Der Satz von Gauss \formelbuch{96} &
+	\begin{minipage}{6.7cm}
+	    \vspace{0.1cm}
+		$\iint\limits_{\partial V}\vec{v}\cdot d\vec{n}=\iiint\limits_V \divergenz
+		\vec{v}\cdot dV$			    
+	    \vspace{0.1cm}   
+    \end{minipage}&
+	\begin{minipage}{7cm}
+    	\vspace{0.1cm}
+		Der Satz von Gauss definiert einen Zusammenhang zwischen einem
+		\textbf{Flussintegral} und einem \textbf{Volumenintegral}.	    
+	    \vspace{0.1cm}    
+    \end{minipage}\\
+	\hline	
+\end{tabular}
