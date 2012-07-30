@@ -16,11 +16,15 @@
 	\dprt{x_n}\right)$ \end{minipage}&
 \begin{minipage}{6.5cm}
 	\vspace{0.1cm}
-	$D_{\vec{v}}f(x_0,y_0)=\frac{d}{dt}f(x_0+tv_x, y_0+tv_y)|_{t=0}$
-	\vspace{0.2cm}\\
-	Falls $f$ im Punkt differenzierbar ist gilt: \\
-	$D_{\vec{v}}f(x_1,\ldots,x_n)=\gradient f(x_1,\ldots,x_n) \circ \vec{v}$
-	\vspace{0.2cm}
+	 Allgemein:\\\vspace{0.1cm}
+  $\dprt{\vec{r}}(x_1, \ldots, x_n)=\gradient f(x_1, \ldots, x_n)
+  \circ \vec{r}$\\
+  \vspace{0.3cm}
+	an der Stelle $(x_0;y_0)$:\\\vspace{0.1cm}
+	$\dprt{\vec{r}}(x_0;y_0)=\gradient f(x_0;y_0) \circ \vec{r}$\\
+
+	
+	\vspace{0.1cm}
 \end{minipage}\\
 \hline
 \begin{minipage}{5.5cm}
@@ -32,14 +36,19 @@
 	Vektor der partiellen Ableitungen von $f$
 \end{minipage}&
 \begin{minipage}{5.5cm}
-	Steigung der Funktion $f$ in Richtung des Vektors $\vec{v}$
+	Steigung der Funktion $f$ in Richtung des Vektors $\vec{r}\quad (|\vec{r}|=1)$
 \end{minipage}\\
 \hline
 \end{tabular}
 
-\subsection{Tangentialebene\formelbuch{28}}
+\subsection{Tangentialebene\formelbuch{12}}
 $\boxed{g(x,y)=f(x_0,y_0)+\dprt{x}(x_0,y_0)\cdot(x-x_0)+\dprt{y}(x_0,y_0)\cdot(y-y_0)}
 \quad \Rightarrow \quad$ Tangentialebene im Punkt $(x_0,y_0,f(x_0,y_0))$\\ \\
+\textbf{Fuer Approximation einer Formel}\\
+Linearisierung am Punkt $(x_0,y_0)$: Tangentialebene $g(x;y)$ beim Punkt
+$(x_0;y_0)$\\
+Die Loesung des approximierten Wertes liefert dann $g(x;y)$.\\
+
 $\boxed{\vec{n}(x_0,y_0)=
 \begin{pmatrix}
 	\sprt{x}(x_0,y_0)\\
@@ -47,7 +56,7 @@ $\boxed{\vec{n}(x_0,y_0)=
 	-1\\                         
 \end{pmatrix}} \quad \Rightarrow \quad$ Normalenvektor der Tangentialebene
 
-\subsection{Niveaulinien und Falllinien\formelbuch{30}}
+\subsection{Niveaulinien und Falllinien\formelbuch{14}}
 \textbf{Falllinien, Orthogonaltrajektorien}\\
 Falllinien sind Kurven, die in jedem Punkt in Richtung max. Zunahme von f
 verlaufen\\
@@ -57,11 +66,19 @@ $\boxed{y'(x)= \dfrac{\prt{y}}{\prt{x}}} \quad
 Durch lösen dieser Differentialgleichung erhält man
 die Lösungskurve $y(x)$\\ \\
 \textbf{Niveaulinien}\\
-$\gradient f \perp $ Niveaulinie\\\\
+$\gradient f \perp $ Niveaulinie oder Tangentensteigung\\\\
 $\boxed{y'(x)=- \dfrac{\prt{x}}{\prt{y}}}\quad
 \Rightarrow \quad$ Steigung der Niveaulinie $y(x)$\\\\
 Durch lösen dieser Differentialgleichung erhält man
-die Lösungskurve $y(x)$
+die Lösungskurve $y(x)$. Auf diese Weise kann man auch einfach die
+Tangentensteigung einer impliziten Form z.B. $\frac{x^2}{100}+\frac{y^2}{25}=1$
+loesen
+
+\subsection{Das totale Differenzial\formelbuch{19}}
+$\boxed{\Delta z \approx dz=f_x(x_0;y_0)dx+f_y(x_0;y_0)dy}$\\
+$\boxed{z=\bar z \pm \sigma_{\bar z} \approx f(\bar x, \bar y) \pm
+\sqrt{(f_x(\bar x,\bar y)\cdot \sigma_{\bar x})^2+(f_y(\bar x,\bar y)\cdot
+\sigma_{\bar y})^2}}$
 
 \subsection{Zusammengesetzte Funktionen\formelbuch{34}}
 $\boxed{\gradient(g\circ f)(x)=g'(f(x))\cdot \gradient f(x)}$
