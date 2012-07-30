@@ -1,3 +1,3 @@
 # FuVar - Funktionen mehrerer Variablen
 
-Matthias Diethelm
+[Matthias Diethelm](https://github.com/mdiethelm)
