@@ -90,13 +90,24 @@ $\boxed{\vec{S}=\begin{pmatrix}
 	x_s\\
 	y_s\\
 	z_s                                            
-\end{pmatrix}=\frac{1}{m}\iiint\limits_G \varrho(x,y,z) \cdot
+\end{pmatrix}=\frac{1}{M}\iiint\limits_G \varrho(x,y,z) \cdot
 \begin{pmatrix}
 	x\\
 	y\\
 	z                                            
-\end{pmatrix}\cdot dxdydz \quad m=\iiint\limits_G \varrho(x,y,z) \cdot
-dxdydz}\\\boxed{I=\iiint\limits_G \varrho(x,y,z)\cdot
+\end{pmatrix}\cdot dxdydz \quad M=\iiint\limits_G \varrho(x,y,z) \cdot
+dxdydz}$\\
+
+$x_s=\frac{1}{M} \int\limits_F x \cdot \varrho(x,y,z)\cdot dF\\
+y_s=\frac{1}{M} \int\limits_F y \cdot \varrho(x,y,z)\cdot dF\\$
+mit $\varrho$ konstant und Objekt nur Platte ($z$ entfaellt):\\
+$
+x_s=\frac{1}{F} \int\limits_F x\cdot dF = \frac{1}{F} \int\limits_a^b
+x(y_0(x)-y_u(x))\cdot dx\\
+y_s=\frac{1}{F} \int\limits_F y\cdot dF = \frac{1}{2F} \int\limits_a^b
+(y_0^2(x)-y_u^2(x))\cdot dx$\\
+
+$\boxed{I=\iiint\limits_G \varrho(x,y,z)\cdot
 \underbrace{(x^2+y^2)}_{k}\cdot
 dxdydz}\quad k$ entspricht dem Abstand zur Rotationsachse hier die $Z$-Achse
 
