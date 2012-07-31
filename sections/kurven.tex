@@ -9,30 +9,27 @@ $$\frac{d(f\circ g)}{dt}(t_0)=\frac{df}{dt}(g(t_0))\frac{dg}{dt}(t_0)=
 die Länge des Vektors wird also mit dem Faktor $f'(t_0)$ gestreckt oder
 gestaucht.
 
-\subsection{Kurvenlänge\formelbuch{42}}
+\subsection{Kurvenlänge\formelbuch{79}}
 \begin{tabular}{|l||l|l|}
 \hline
-& \textbf{Formel} & \textbf{Bedingung(en)}\\
+& \textbf{Formel} & \textbf{Bedingung}\\
 \hline
 \hline
-\textbf{Länge von $a$ nach $b$} &
-	\begin{minipage}{5cm}
+\textbf{Parametergleichung $\vec{x}=\vec{x}(t)$} &
+	\begin{minipage}{6cm}
     	\vspace{0.1cm}
-		$L=\int\limits_a^b|{f'(\tau)}|d\tau$ 
+		$l=\int\limits_r^s\sqrt{[x_1'(t)]^2+\ldots+[x_n'(t)]^2}dt$ 
 		\vspace{0.1cm}
     \end{minipage}&
-rektifizierbar $\quad\Rightarrow\quad f'(t)$ integrierbar\\
+  $r\leq t\leq s$\\
 \hline
-\textbf{Länge in Abhängigkeit der Zeit} &
-	\begin{minipage}{5cm}
+\textbf{Im Speziellen für Graphen von Funktionen $f(x)$} &
+	\begin{minipage}{6cm}
     	\vspace{0.1cm}
-		$s(t)=\int\limits_a^t|{f'(\tau)}|d\tau$ 
+		$l=\int\limits_a^b\sqrt{1+[f'(x)]^2}dx$ 
 		\vspace{0.1cm}
     \end{minipage}&
-\begin{minipage}{7cm}
-	rektifizierbar $\quad\Rightarrow\quad f'(t)$ integrierbar\\
-	regulär $\qquad\quad\;\;\Rightarrow\quad f'(t)\neq 0$
-\end{minipage}\\
+  $a\leq x \leq b$\\
 \hline
 \end{tabular}\vspace{0.5cm}\\
 
