@@ -1,4 +1,4 @@
-\section{Vektorfelder\formelbuch{83}}
+\section{Vektorfelder\formelbuch{82}}
 Ein Vektorfeld ist eine Abbildung $\vec{v}:\mathbb{R}^n\rightarrow
 \mathbb{R}^n$, welche jedem Punkt des Raumes einen Vektor anheftet.
 \subsection{Wegintegral\formelbuch{83}}
@@ -32,21 +32,47 @@ $\vec{c}(t)=
   d\vec{s}=-\int\limits_{-C} \vec{F}\cdot d\vec{s}$
 \end{itemize}
 
-\subsection{Konservative Felder / Potentialfelder\formelbuch{84}}
-Ein Vektorfeld $\vec{v}$ heisst \textit{konservativ}, wenn das Wegintegral
+\subsection{Konservative Felder / Potentialfelder\formelbuch{83}}
+Ein Vektorfeld $\vec{F}$ heisst \textit{konservativ}, wenn das Wegintegral
 unabhängig vom gewählten Weg ist.\\\\
-$\Rightarrow\qquad \boxed{\oint_C \vec{v}\cdot d\vec{s}=0}\qquad\boxed{
-\int\limits_{Weg_1\, A\rightarrow B} \vec{v}\cdot d\vec{s}=\int\limits_{Weg_2\,
-A\leadsto B} \vec{v}\cdot d\vec{s}=\int\limits_A^B \vec{v}\cdot
-d\vec{s}}\qquad\boxed{\rotation (\vec{v})=0}$\\\\\\	
-\textbf{Es gelten folgende zwei Sätze:}
+$\Rightarrow\qquad \boxed{\oint_C \vec{F}\cdot d\vec{s}=0}\qquad\boxed{
+\int\limits_{Weg_1\, A\rightarrow B} \vec{F}\cdot d\vec{s}=\int\limits_{Weg_2\,
+A\leadsto B} \vec{F}\cdot d\vec{s}=\int\limits_A^B \vec{F}\cdot
+d\vec{s}}\qquad\boxed{\rotation (\vec{F})=0}$\\\\\\	
+\textbf{Es gelten folgende Sätze:}
+Für ein Vektorfeld $\vec{F}$ im zwei- oder dreidimensionalen Koordinatensystem
+gilt in einem Bereich ohne "`durchgehende Löcher"', d.h. in dem sich jede
+geschlossene Kurve auf einen Punkt zusammenziehen lässt:
 \begin{itemize}
-  \item Ist $\vec{v}=\gradient f$, dann ist $\vec{v}$
-  \textit{konservativ} und es gilt: $\quad\int\limits_A^B \vec{v}\cdot d\vec{s}=f(B)-f(A)$
-  \item Ist $\vec{v}$ \textit{konservativ}, dann gibt es eine Funktion $f$ so,
-  dass $\vec{v}=\gradient f$.
+  \item $\vec{F}$ ist konservativ, d.h die Kurvenintegrale wegunabhängig.
+  \item $\vec{F}$ ist ein Gradientenfeld, d.h. es gibt ein Potential $\Phi$ mit
+  $\vec{F}=\gradient \Phi(\vec{x}(t))$.
+  \item $\vec{F}$ erfüllt die sogenannte(n)
+  \textbf{Integrabilitätsbedingung(en)}, d.h. im
+  \begin{itemize}
+    \item zweidimensionalen Fall die Gleichung $\frac{\partial F_1}{\partial
+    x_2}=\frac{\partial F_2}{\partial x_1}$,
+    \item dreidimensionalen Fall die Gleichungen $\frac{\partial F_1}{\partial
+    x_2}=\frac{\partial F_2}{\partial x_1}$, $\frac{\partial F_2}{\partial
+    x_3}=\frac{\partial F_3}{\partial x_2}$, $\frac{\partial F_3}{\partial
+    x_1}=\frac{\partial F_1}{\partial x_3}$
+  \end{itemize}
 \end{itemize}
+\textbf{und}
+\begin{itemize}
+  \item Ist $\vec{F}=\gradient \Phi(\vec{x}(t))$, dann ist $\vec{F}$  
+  \textit{konservativ} und es gilt: $\quad\int\limits_r^s f(t)
+  dt=\Phi(s)-\Phi(r)$
+  \item Ist $\vec{F}$ \textit{konservativ}, dann gibt es eine Funktion $\Phi$
+  so, dass $\vec{F}=\gradient \Phi(\vec{x}(t))=
+  \begin{pmatrix}
+    \Phi_{x_1}\\
+    \vdots\\ 
+    \Phi_{x_n}
+  \end{pmatrix}$.
 
+\end{itemize}
+\newpage
 \subsection{Rotation\formelbuch{86 \& 92}}
 Interpretiert man dieses Feld als Strömungsfeld, so gibt die Rotation für jeden
 Ort an, wie schnell und um welche Achse ein mitschwimmender Körper rotieren
