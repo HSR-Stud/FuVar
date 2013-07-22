@@ -1,49 +1,58 @@
-\section{Skalare Funktionen ($\mathbb{R}^n \rightarrow \mathbb{R}$)
-\formelbuch{17}}
+\section{Skalare Funktionen ($\mathbb{R}^n \rightarrow \mathbb{R}$)}
 
-\subsection{Ableitungen\formelbuch{21}}
-\begin{tabular}{|l|l|l|}
-\hline
-\textbf{partielle Ableitung} & \textbf{Gradient} & \textbf{Richtungsableitung}\\
-\hline
-\begin{minipage}{5.5cm}
-	\vspace{0.2cm}
-	$\dprt{x_1}(x_1,\ldots,x_n)= \sprt{x_1}(x_1,\ldots,x_n)$
-	\vspace{0.2cm}
-\end{minipage}&
-\begin{minipage}{6cm}
-	$\gradient f(x_1,\ldots,x_n)= \left(\dprt{x_1}, \,\ldots\,,
-	\dprt{x_n}\right)$ \end{minipage}&
-\begin{minipage}{6.5cm}
-	\vspace{0.1cm}
-	 Allgemein:\\\vspace{0.1cm}
-  $\dprt{\vec{r}}(x_1, \ldots, x_n)=\gradient f(x_1, \ldots, x_n)
-  \bullet \vec{r}$\\
-  \vspace{0.3cm}
-	an der Stelle $(x_0;y_0)$:\\\vspace{0.1cm}
-	$\dprt{\vec{r}}(x_0;y_0)=\gradient f(x_0;y_0) \bullet \vec{r}$\\
+\subsection{Ableitungen}
+\begin{tabular}{|p{6cm}|p{5.5cm}|p{6.5cm}|}
+  \hline
+    \textbf{partielle Ableitung\formelbuch{11}} & \textbf{Gradient\formelbuch{22/46}} & \textbf{Richtungsableitung\formelbuch{20/46}}\\
+  \hline
+    $\dprt{x_1}(x_1,\ldots,x_m)= f_{x1}(x_1,\ldots,x_m)$ & 
+    
+    $\gradient f(x_1,\ldots,x_m)= \begin{pmatrix}
+      f_x(x_0;y_0) \\ 
+      f_y(x_0;y_0)
+    \end{pmatrix} $ &
 
-	
-	\vspace{0.1cm}
-\end{minipage}\\
-\hline
-\begin{minipage}{5.5cm}
-	\vspace{0.2cm}
-	partielle Ableitung der Funktion $f$ nach dem Parameter $x_1$
-	\vspace{0.2cm}
-\end{minipage}&
-\begin{minipage}{5.5cm}
-	Vektor der partiellen Ableitungen von $f$
-\end{minipage}&
-\begin{minipage}{5.5cm}
-	Steigung der Funktion $f$ in Richtung des Vektors $\vec{r}\quad (|\vec{r}|=1)$
-\end{minipage}\\
-\hline
+	  Allgemein:  \newline  %\\\vspace{0.1cm}
+    $\dprt{\vec{r}}(x_1, \ldots, x_m)=\gradient f(x_1, \ldots, x_m)
+    \bullet \vec{r}$ \newline
+    \vspace{0.3cm}
+	  an der Stelle $(x_0;y_0)$: \newline
+	  \vspace{0.1cm}
+	    $\dprt{\vec{r}}(x_0;y_0)=\gradient f(x_0;y_0) \bullet \vec{r}$ \\
+  \hline
+    partielle Ableitung der Funktion $f$ nach dem Parameter $x_1$ &
+    
+    Vektor der partiellen Ableitungen von $f$. Der Gradient zeigt in Richtung der grössten Steigung und steht senkrecht auf der Niveaulinie.
+    	Der Wert der Steigung entspricht $|\gradient f|$ &
+    	
+    	Steigung der Funktion $f$ in Richtung des Vektors 
+    	$\vec{r} = \begin{pmatrix}
+    	  \cos\alpha \\
+    	  \sin\alpha
+    	\end{pmatrix} (|\vec{r}|=1)$ \\
+  \hline
 \end{tabular}
 
-\subsection{Tangentialebene\formelbuch{12}}
-$\boxed{g(x,y)=f(x_0,y_0)+\dprt{x}(x_0,y_0)\cdot(x-x_0)+\dprt{y}(x_0,y_0)\cdot(y-y_0)}
-\quad \Rightarrow \quad$ Tangentialebene im Punkt $(x_0,y_0,f(x_0,y_0))$\\ \\
+
+\subsection{Tangentialebene}
+  \begin{tabular}{|p{9cm}|p{9cm}|}
+    \hline
+      \textbf{2 Variablen\formelbuch{12}} &
+      \textbf{m Variablen\formelbuch{44}} \\
+
+      im Punkt: $x_0, y_0$ &
+      im Punkt: $x_1^{(0)}, \ldots, x_m^{(0)}$ \\
+        
+    \hline
+      \[g(x,y)=f(x_0,y_0)+f_0(x_0,y_0)\cdot(x-x_0)+f_y(x_0,y_0)\cdot(y-y_0)\] &
+      \begin{eqnarray}
+        g(x_1;\ldots;x_m)  & = & f(x_1^{(0)};\ldots;x_m^{(0)}) + f_{x_1}(x_1^{(0)};\ldots;x_m^{(0)}) \cdot \nonumber \\
+        & & (x_1-x_1^{(0)})+\ldots + f_{x_m}(x_1^{(0)};\ldots;x_m^{(0)}) \cdot \nonumber \\
+        & & (x_m-x_m^{(0)}) \nonumber
+      \end{eqnarray} \\
+    \hline  
+  \end{tabular}
+  
 \textbf{Für Approximation einer Formel}\\
 Linearisierung am Punkt $(x_0,y_0)$: Tangentialebene $g(x;y)$ beim Punkt
 $(x_0;y_0)$\\
@@ -56,33 +65,80 @@ $\boxed{\vec{n}(x_0,y_0)=
 	-1\\                         
 \end{pmatrix}} \quad \Rightarrow \quad$ Normalenvektor der Tangentialebene
 
-\subsection{Niveaulinien und Falllinien\formelbuch{14}}
-\textbf{Falllinien, Orthogonaltrajektorien}\\
-Falllinien sind Kurven, die in jedem Punkt in Richtung max. Zunahme von f
-verlaufen\\
-$\Rightarrow \gradient f$ steht tangential zur Falllinie\\\\
-$\boxed{y'(x)= \dfrac{\prt{y}}{\prt{x}}} \quad
-\Rightarrow \quad$ Steigung der Falllinie $y(x)$\\\\
-Durch lösen dieser Differentialgleichung erhält man
-die Lösungskurve $y(x)$\\ \\
-\textbf{Niveaulinien}\\
-$\gradient f \perp $ Niveaulinie oder Tangentensteigung\\\\
-$\boxed{y'(x)=- \dfrac{\prt{x}}{\prt{y}}}\quad
-\Rightarrow \quad$ Steigung der Niveaulinie $y(x)$\\\\
-Durch lösen dieser Differentialgleichung erhält man
-die Lösungskurve $y(x)$. Auf diese Weise kann man auch einfach die
-Tangentensteigung einer impliziten Form z.B. $\frac{x^2}{100}+\frac{y^2}{25}=1$
-lösen
+\subsection{Steigung\formelbuch{14}}
+  $\boxed{m = -\frac{f_x(x_0;y_0)}{f_y(x_0;y_0)}}$ falls in einer impliziten Form $f(x;y) = 0$ und $f_y(x_0;y_0) \neq 0$
+  
 
-\subsection{Das totale Differenzial\formelbuch{19}}
-$\boxed{\Delta z \approx dz=f_x(x_0;y_0)dx+f_y(x_0;y_0)dy}$\\
-$\boxed{z=\bar z \pm \sigma_{\bar z} \approx f(\bar x, \bar y) \pm
-\sqrt{(f_x(\bar x,\bar y)\cdot \sigma_{\bar x})^2+(f_y(\bar x,\bar y)\cdot
-\sigma_{\bar y})^2}}$
+%\subsection{Niveaulinien und Falllinien\formelbuch{14}}
+%\textbf{Falllinien, Orthogonaltrajektorien}\\
+%Falllinien sind Kurven, die in jedem Punkt in Richtung max. Zunahme von f
+%verlaufen\\
+%$\Rightarrow \gradient f$ steht tangential zur Falllinie\\\\
+%$\boxed{y'(x)= \dfrac{\prt{y}}{\prt{x}}} \quad
+%\Rightarrow \quad$ Steigung der Falllinie $y(x)$\\\\
+%Durch lösen dieser Differentialgleichung erhält man
+%die Lösungskurve $y(x)$\\ \\
+%\textbf{Niveaulinien}\\
+%$\gradient f \perp $ Niveaulinie oder Tangentensteigung\\\\
+%$\boxed{y'(x)=- \dfrac{\prt{x}}{\prt{y}}}\quad
+%\Rightarrow \quad$ Steigung der Niveaulinie $y(x)$\\\\
+%Durch lösen dieser Differentialgleichung erhält man
+%die Lösungskurve $y(x)$. Auf diese Weise kann man auch einfach die
+%Tangentensteigung einer impliziten Form z.B. $\frac{x^2}{100}+\frac{y^2}{25}=1$
+%lösen
+
+\subsection{Das totale Differenzial}
+
+  \textbf{Die vier Grundoperationen} \\
+  \begin{tabular}{|l|l|}
+    \hline
+      $z = f(x;y)$ &
+      Standardabweichung \\
+    \hline
+      \begin{tabular}{l}
+        $z = x + y$ \\
+        $z = x - y$
+      \end{tabular}  &    
+      $\rbrace \sigma_{\bar z} \approx \sqrt{\sigma_{\bar x}^2 + \sigma_{\bar y}^2}$ \\
+      
+    \hline
+      \begin{tabular}{l}
+        $z = C\cdot x \cdot y$ \\
+        $z = C\cdot \frac{x}{y}$
+      \end{tabular} &
+      $\rbrace |\frac{\sigma_{\bar z}}{\bar z}| \approx \sqrt{|\frac{\sigma_{\bar x}}{\bar x}|^2 + |\frac{\sigma_{\bar y}}{\bar y}|^2}$ \\
+    \hline
+  \end{tabular}
+    
+  
+  \subsubsection{totale Differential}
+    \begin{tabular}{|p{8cm}|p{10cm}|}
+      \hline
+        \textbf{2 Variablen \formelbuch{16}} &
+        \textbf{mehrere Variablen \formelbuch{45}} \\
+      \hline
+        $\Delta z \approx dz=f_x(x_0;y_0)dx+f_y(x_0;y_0)dy$ &
+        $\Delta f \approx df=f_{x_1}(x_1^{(0)};\ldots;x_m^{(0)})\cdot dx_1 + \ldots + f_{x_m}(x_1^{(0)};\ldots;x_m^{(0)})\cdot dx_m$ \\
+      \hline  
+    \end{tabular}
+  
+  \subsubsection{Gauss'sches Fehlerfortpflanzungsgesetz}
+    \begin{tabular}{|p{8.5cm}|p{9.5cm}|}
+      \hline
+        $z=\bar z \pm \sigma_{\bar z} \approx f(\bar x, \bar y) \pm
+        \sqrt{(f_x(\bar x,\bar y)\cdot \sigma_{\bar x})^2+(f_y(\bar x,\bar y)\cdot
+        \sigma_{\bar y})^2}$ \formelbuch{19} &
+        $y=\bar y \pm \sigma_{\bar y} \approx f(\bar{x_1};\ldots;\bar{x_m}) \pm \newline
+        \sqrt{[f_{x_1}(\bar{x_1};\ldots;\bar{x_m}) \cdot \sigma_{\bar{x_1}}]^2 + \ldots + 
+        [f_{x_m}(\bar{x_1};\ldots;\bar{x_m}) \cdot \sigma_{\bar{x_m}}]^2}$ \formelbuch{45} \\
+      \hline
+    \end{tabular}
+
+
 
 \subsection{Zusammengesetzte Funktionen\formelbuch{34}}
 $\boxed{\gradient(g\circ f)(x)=g'(f(x))\cdot \gradient f(x)}$
-\newpage
+
 
 \subsection{Extremalprobleme}
 \textbf{Zwei Dimensionen}\\
