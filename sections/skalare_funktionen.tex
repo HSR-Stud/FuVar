@@ -110,68 +110,127 @@ $\boxed{\vec{n}(x_0,y_0)=
     \hline
   \end{tabular}
     
-  
+
   \subsubsection{totale Differential}
-    \begin{tabular}{|p{8cm}|p{10cm}|}
-      \hline
-        \textbf{2 Variablen \formelbuch{16}} &
-        \textbf{mehrere Variablen \formelbuch{45}} \\
-      \hline
+    \begin{tabular}{|p{7cm}| l |p{10cm}| l}
+      \cline{1-1}
+      \cline{3-3}
         $\Delta z \approx dz=f_x(x_0;y_0)dx+f_y(x_0;y_0)dy$ &
-        $\Delta f \approx df=f_{x_1}(x_1^{(0)};\ldots;x_m^{(0)})\cdot dx_1 + \ldots + f_{x_m}(x_1^{(0)};\ldots;x_m^{(0)})\cdot dx_m$ \\
-      \hline  
-    \end{tabular}
+        \formelbuch{16} &
+        $\Delta f \approx df=f_{x_1}(x_1^{(0)};\ldots;x_m^{(0)})\cdot dx_1 + \ldots + f_{x_m}(x_1^{(0)};\ldots;x_m^{(0)})\cdot dx_m$ &
+        \formelbuch{45} \\
+      \cline{1-1}
+      \cline{3-3}
+    \end{tabular}      
+  
   
   \subsubsection{Gauss'sches Fehlerfortpflanzungsgesetz}
-    \begin{tabular}{|p{8.5cm}|p{9.5cm}|}
-      \hline
-        $z=\bar z \pm \sigma_{\bar z} \approx f(\bar x, \bar y) \pm
-        \sqrt{(f_x(\bar x,\bar y)\cdot \sigma_{\bar x})^2+(f_y(\bar x,\bar y)\cdot
-        \sigma_{\bar y})^2}$ \formelbuch{19} &
-        $y=\bar y \pm \sigma_{\bar y} \approx f(\bar{x_1};\ldots;\bar{x_m}) \pm \newline
-        \sqrt{[f_{x_1}(\bar{x_1};\ldots;\bar{x_m}) \cdot \sigma_{\bar{x_1}}]^2 + \ldots + 
-        [f_{x_m}(\bar{x_1};\ldots;\bar{x_m}) \cdot \sigma_{\bar{x_m}}]^2}$ \formelbuch{45} \\
-      \hline
-    \end{tabular}
+    $\boxed{z=\bar z \pm \sigma_{\bar z} \approx f(\bar x, \bar y) \pm
+    \sqrt{(f_x(\bar x,\bar y)\cdot \sigma_{\bar x})^2+(f_y(\bar x,\bar y)\cdot
+    \sigma_{\bar y})^2}}$ \formelbuch{19} \\
+    
+    $\boxed{y=\bar y \pm \sigma_{\bar y} \approx f(\bar{x_1};\ldots;\bar{x_m}) \pm
+    \sqrt{[f_{x_1}(\bar{x_1};\ldots;\bar{x_m}) \cdot \sigma_{\bar{x_1}}]^2 + \ldots + 
+    [f_{x_m}(\bar{x_1};\ldots;\bar{x_m}) \cdot \sigma_{\bar{x_m}}]^2}}$ \formelbuch{45}
+   
 
+%\subsection{Zusammengesetzte Funktionen\formelbuch{34}}
+%$\boxed{\gradient(g\circ f)(x)=g'(f(x))\cdot \gradient f(x)}$
 
-
-\subsection{Zusammengesetzte Funktionen\formelbuch{34}}
-$\boxed{\gradient(g\circ f)(x)=g'(f(x))\cdot \gradient f(x)}$
-
+\subsection{Kurvenapproximation}
+  Punkte $P_1$ bis $P_n$ sind gegeben.
+  \begin{enumerate}
+    \item 
+      Approximation durch eine Funktion: $y(x) = ax+b$\\
+      $f(a;b) = \sum\limits_{i=1}^{n} (y(x_i)-y_i)^2 = \sum\limits_{i=1}^{n} (ax_i+b-y_i)^2$\\
+    \item
+      $f_a = \dprt{a} \sum\limits_{i=1}^{n} (ax_i+b-y_i)^2 = 2 \sum\limits_{i=1}^{n}x_i\cdot (ax_i+b-y_i)
+      = 2 \sum\limits_{i=1}^{n}(ax_i^2+bx_i-x_iy_i)$ \\
+      $f_b = \dprt{b} \sum\limits_{i=1}^{n} (ax_i+b-y_i)^2 = 2 \sum\limits_{i=1}^{n} (ax_i+b-y_i)$ \\
+    \item
+      $\gradient f = \left|\begin{matrix}
+        f_a(a;b) \\
+        f_b(a;b)
+      \end{matrix} \right| = \left| \begin{matrix}
+        2(a\bar{x^2} + b\bar{x} - \bar{xy}) \\
+        2(a\bar{x} + b - \bar{y})
+      \end{matrix} \right| = \left| \begin{matrix}
+        a\bar{x^2} + b\bar{x} - \bar{xy} \\
+        a\bar{x} + b - \bar{y}
+      \end{matrix} \right| = \vec{0}$ \\
+    \item
+      Nach $a$ und $b$ auflösen und in die Funktion einsetzen
+  \end{enumerate}
+    
+\subsection{numerische Verfahren zum Auffinden von stationären Punkten}
+  \subsubsection{Newton Verfahren\formelbuch{29}}
+    \begin{enumerate}
+      \item
+        Man startet mit einer möglichst guten Approximation $(x_0;y_0)$\\
+      \item
+        Man löst für $n = 0,1,2,\ldots$ das Gleichungssystem\\
+        $\left|\begin{matrix}
+          f_{xx}(x_n;y_n)\cdot\Delta x_n + f_{xy}(x_n;y_n)\cdot\Delta y_n = -f_x(x_n;y_n) \\
+          f_{xy}(x_n;y_n)\cdot\Delta x_n + f_{yy}(x_n;y_n)\cdot\Delta y_n = -f_y(x_n;y_n)
+        \end{matrix}\right|$ , und setze $(x_{n+1};y_{n+1}) := (x_n +\Delta x_n; y_n + \Delta y_n)$\\
+      \item
+        Den letzten berechneten Punkt $(x_{n+1};y_{n+1})$ akzeptiert man als Approximation für den stationären Punkt.
+    \end{enumerate}
+    
+  \subsubsection{Gradientenverfahren \formelbuch{34}}
+    Beim Gradientenverfahren startet man bei einer möglichst guten Approximation und folgt, dann immer der steilsten Steigung,
+    bis genügend Konvergenz vorliegt.
+    
 
 \subsection{Extremalprobleme}
-\textbf{Zwei Dimensionen}\\
-\begin{enumerate}
-  \item Randpunkte von $\mathbb{D}_f$
-  \item Punkte, in denen der Gradientenvektor $\gradient f$ nicht existiert. 
-  \item Punkte, in denen der Gradientenvektor $\gradient f=0$ ist.\\
-  Hat die Funktion $f(x;y)$ an der Stelle $(x_0;y_0)$ einen verschwindenden Gradientenvektor $\gradient f = 0$ und gilt für die Diskriminante $\Delta = f_{xx}    (x_0;y_0) \cdot f_{yy}(x_0;y_0) -  (f_{xy}(x_0;y_0))^2$
+  \textbf{Zwei Variablen\formelbuch{25}}
+  \begin{enumerate}
+    \item 
+      Randpunkte von $\mathbb{D}_f$
+    \item 
+      Punkte, in denen der Gradientenvektor $\gradient f$ nicht existiert. 
+    \item 
+      Punkte, in denen der Gradientenvektor $\gradient f=0$ ist.\\
+      Hat die Funktion $f(x;y)$ an der Stelle $(x_0;y_0)$ einen verschwindenden Gradientenvektor $\gradient f = 0$ 
+      und gilt für die Diskriminante $\Delta = f_{xx}    (x_0;y_0) \cdot f_{yy}(x_0;y_0) -  (f_{xy}(x_0;y_0))^2$
+      \begin{itemize}
+        \item 
+          $\Delta > 0 $, so besitz $f(x_0;y_0)$ ein lokales Extremum. Im Fall $f_{xx}(x_0;y_0) < 0$ liegt ein lokales Maximum vor, 
+          für $f_{xx}(x_0;y_0) > 0$ hingegen ein lokales Minimum.
+        \item
+          $\Delta < 0 $, so besitzt $f(x_0;y_0)$ in $(x_0;y_0)$ ein Sattelpunkt.
+        \item 
+          $\Delta = 0 $, so braucht es weitere Untersuchungen, um die Art der Stelle $(x_0;y_0)$ zu bestimmen können.
+        \item 
+          Wenn es kein lokales/relatives Minima/Maxima gibt, dann auch kein absolutes!
+        \item
+          Hat es ein lokales Maxima so gilt: $f(x;y) \leq M$ $\forall$ $(x;y) \in \mathbb{D}_f \Rightarrow M$ globales Maxima
+      \end{itemize}
+    \end{enumerate}
+  
+  \textbf{m Variablen\formelbuch{46}}
+  Funktion $f(x_1^{(0)};\ldots;x_m^{(0)})$ gegeben.  \\
   \begin{itemize}
-    \item $\Delta > 0 $, so besitz $f(x_0;y_0)$ ein lokales Extremum. Im Fall $f_{xx}(x_0;y_0) < 0$ liegt ein lokales Maximum vor, für $f_{xx}(x_0;y_0) >       0$ hingegen ein lokales Minimum.
-    \item $\Delta < 0 $, so besitzt $f(x_0;y_0)$ in $(x_0;y_0)$ ein Sattelpunkt.
-    \item $\Delta = 0 $, so braucht es weitere Untersuchungen, um die Art der Stelle $(x_0;y_0)$ zu bestimmen können.
-    \item Wenn es kein lokales/relatives Minima/Maxima gibt, dann auch kein
-    absolutes! 
+    \item 
+      Schritte 1 - 3 sind gleich wie bei zwei Dimensionen. Kandidaten $(x_1^{(0)};\ldots;x_m^{(0)})$ bekommen.
+    \item 
+      Bestimmung der Art der Extremalstellen: Hessesche Matrix aufstellen\\
+      $H(x_1^{(0)};\ldots;x_m^{(0)}) := \begin{pmatrix}
+        f_{x_{1}x_{1}}(x_1^{(0)};\ldots;x_m^{(0)}) & \ldots & f_{x_{1}x_{m}}(x_1^{(0)};\ldots;x_m^{(0)})\\
+        \vdots && \vdots\\
+        f_{x_{m}x_{1}}(x_1^{(0)};\ldots;x_m^{(0)}) & \ldots & f_{x_{m}x_{m}}(x_1^{(0)};\ldots;x_m^{(0)})
+      \end{pmatrix}$\\
+      \begin{itemize}
+        \item
+          $m$ positive Eigenwerte $\lambda_i > 0$, so besitzt $f$ in $(x_1^{(0)};\ldots;x_m^{(0)})$ ein lokales Minimum,
+        \item
+          $m$ negative Eigenwerte $\lambda_i < 0$, so besitzt $f$ in $(x_1^{(0)};\ldots;x_m^{(0)})$ ein lokales Maximum,
+        \item 
+          positive und negative Eigenwerte, so besitzt $f$ in $(x_1^{(0)};\ldots;x_m^{(0)})$ einen Sattelpunkt.
+        \item 
+          Wenn $\lambda_i \leqq 0$ oder $\lambda_i \geqq 0$ sind weitere Untersuchungen nötig.
+      \end{itemize}
   \end{itemize}
-\end{enumerate}
-\textbf{m Dimensionen}\\
-Funktion $f(x_1^{(0)};\ldots;x_m^{(0)})$ gegeben.  \\
-\begin{itemize}
-  \item Schritte 1 - 3 sind gleich wie bei zwei Dimensionen. Kandidaten $(x_1^{(0)};\ldots;x_m^{(0)})$ bekommen.
-  \item Bestimmung der Art der Extremalstellen: Hessesche Matrix aufstellen\\
-  $H(x_1^{(0)};\ldots;x_m^{(0)}) := \begin{pmatrix}
-          f_{x_{1}x_{1}}(x_1^{(0)};\ldots;x_m^{(0)}) & \ldots & f_{x_{1}x_{m}}(x_1^{(0)};\ldots;x_m^{(0)})\\
-          \vdots && \vdots\\
-          f_{x_{m}x_{1}}(x_1^{(0)};\ldots;x_m^{(0)}) & \ldots & f_{x_{m}x_{m}}(x_1^{(0)};\ldots;x_m^{(0)})
-          \end{pmatrix}$\\
-  \begin{itemize}
-    \item $m$ positive Eigenwerte $\lambda_i > 0$, so besitzt $f$ in $(x_1^{(0)};\ldots;x_m^{(0)})$ ein lokales Minimum,
-    \item $m$ negative Eigenwerte $\lambda_i < 0$, so besitzt $f$ in $(x_1^{(0)};\ldots;x_m^{(0)})$ ein lokales Maximum,
-    \item positive und negative Eigenwerte, so besitzt $f$ in $(x_1^{(0)};\ldots;x_m^{(0)})$ einen Sattelpunkt.
-    \item Wenn $\lambda_i \leqq 0$ oder $\lambda_i \geqq 0$ sind weitere Untersuchungen nötig.
-  \end{itemize}
-\end{itemize}
 
 \subsubsection{Extremstellen auf Randwerten \formelbuch{38}}
 \begin{tabular}{lll}
