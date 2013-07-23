@@ -1,13 +1,42 @@
-\section{Kurven ($\mathbb{R} \rightarrow \mathbb{R}^n$)
-\formelbuch{41}}
-\subsection{Parametertransformation\formelbuch{42}}
-Tangentenrichtung ist unabhängig von der Parametrisierung der Kurve. Die Länge
-jedoch nicht. Ist $g$ eine Kurve, beschreibt $f\circ g$ die gleiche Kurve mit
-einer anderen Parametrisierung. Der Tangentialvektor ist somit:\\
-$$\frac{d(f\circ g)}{dt}(t_0)=\frac{df}{dt}(g(t_0))\frac{dg}{dt}(t_0)=
-\frac{df}{dt}(g(t_0))g'(t_0)$$\\
-die Länge des Vektors wird also mit dem Faktor $f'(t_0)$ gestreckt oder
-gestaucht.
+\section{Kurven ($\mathbb{R} \rightarrow \mathbb{R}^n$)\formelbuch{41}}
+
+%\subsection{Parametertransformation\formelbuch{42}}
+%Tangentenrichtung ist unabhängig von der Parametrisierung der Kurve. Die Länge
+%jedoch nicht. Ist $g$ eine Kurve, beschreibt $f\circ g$ die gleiche Kurve mit
+%einer anderen Parametrisierung. Der Tangentialvektor ist somit:\\
+%$$\frac{d(f\circ g)}{dt}(t_0)=\frac{df}{dt}(g(t_0))\frac{dg}{dt}(t_0)=
+%\frac{df}{dt}(g(t_0))g'(t_0)$$\\
+%die Länge des Vektors wird also mit dem Faktor $f'(t_0)$ gestreckt oder
+%gestaucht.
+
+\subsection{Flächeninhalt einer geschlossenen ebenen Kurve\formelbuch{73}}
+  Eine kreuzungsfreie, geschlossene Kurve $\begin{pmatrix} x\\ y \end{pmatrix} = \begin{pmatrix} x(t)\\ y(t) \end{pmatrix}, t \in (r;s)$ 
+  hat einen Flächeninhalt von\\
+  $\boxed{F =  \left | \int_r^s y(t) \cdot x^{'}(t) dt \right | = \left | \int_r^s
+  x(t) \cdot y^{'}(t) dt \right |}$\\\\
+  Hat die Kurve einen Kreuzungspunkt:\\ 
+  $x_1(t_1) = x_2(t_2)$\\
+  $y_1(t_1) = y_2(t_2)$\\\\
+  Der Zeitpunkt t ist bei $x_1$ und $x_2$ \textbf{NICHT} gleich!\\
+  So kann man herausfinden, innerhalb welchen Zeitpunkten die Schleife durchgegangen wird!\\
+
+\begin{multicols}{2}  
+  \subsection{Differentation einer Kurve\formelbuch{75}}
+    $\boxed{\begin{pmatrix}
+      f_1(t) \\
+      \vdots \\
+      f_m(t)
+    \end{pmatrix}' = \begin{pmatrix}
+      f_1'(t)\\
+      \vdots\\
+      f_m'(t)
+    \end{pmatrix}}$ \\
+    $\Rightarrow$ Tangente nicht partiell ableiten sondern nach $t$
+  \columnbreak  
+  
+  \subsection{Kurvenintegrale\formelbuch{77}}
+    $\boxed{I = \int\limits_r^s f(\vec x(t)) \cdot |\vec x'(t)| dt}$
+\end{multicols}
 
 \subsection{Kurvenlänge\formelbuch{79}}
 \begin{tabular}{|l||l|l|}
@@ -33,51 +62,31 @@ gestaucht.
 \hline
 \end{tabular}\vspace{0.5cm}\\
 
-\textbf{Flächeninhalt einer geschlossenen ebenen Kurve}\\
-Eine kreuzungsfreie, geschlossene Kurve $\begin{pmatrix} x\\ y \end{pmatrix} = \begin{pmatrix} x(t)\\ y(t) \end{pmatrix}, t \in (r;s)$ hat einen Flächeninhalt von\\
-$\boxed{F =  \left | \int_r^s y(t) \cdot x^{'}(t) dt \right | = \left | \int_r^s
-x(t) \cdot y^{'}(t) dt \right |}$\\\\
-Hat die Kurve einen Kreuzungspunkt:\\ 
-$x_1(t_1) = x_2(t_2)$\\
-$y_1(t_1) = y_2(t_2)$\\\\
-Der Zeitpunkt t ist bei $x_1$ und $x_2$ \textbf{NICHT} gleich!\\
-So kann man herausfinden, innerhalb welchen Zeitpunkten die Schleife durchgangen
-wird!\\
 
-\textbf{Kurve in Kurvenlängenparameter transformieren}
-\begin{enumerate}
-  \item Prüfen ob $f'(t)\neq 0$ \& integrierbar ist, falls nicht kann die Kurve
-  nicht transformiert werden.
-  \item $s(t)$ berechnen.
-  \item Umkehrfunktion $s(t)^{-1}$ berechnen.
-  \item $t(s)$ in $f$ einsetzen $\Rightarrow f(t(s))= f\circ s(t)^{-1}$
-\end{enumerate}
-\vspace{0.5cm}
-\textbf{Eigenschaften für Kurvenlängenparameter}\\
-Eine Kurve besitzt Kurvenlängenparameter wenn folgendes gilt:\\
-$$\left|\frac{df}{dt}(t)\right|=1$$
 
-\subsection{Krümmung \& Krümmungskreisradius\formelbuch{45}}
-\begin{tabular}{|l|l|l|}
-	\hline
-	& mit Kurvenlägenparameter & ohne Kurvenlängenparameter\\
-	\hline
-	Krümmung &
-	$\kappa(s)=|f''(s)|$ &
-	\begin{minipage}{5cm}
-    	\vspace{0.1cm}
-		$\kappa(t)=\dfrac{|f'(t) \times f''(t)|}{|f'(t)|^3}$\\ 
-		\vspace{0.1cm}
-    \end{minipage}\\	
-	\hline
-	Krümmungskreisradius &
-	$r(s)=\dfrac{1}{\kappa(s)}=\dfrac{1}{|f''(s)|}$ &
-	\begin{minipage}{5cm}
-    	\vspace{0.1cm}
-		$r(t)=\dfrac{1}{\kappa(t)}=\dfrac{|f'(t)|^3}{|f'(t) \times
-		f''(t)|}$    
-		\vspace{0.1cm}
-    \end{minipage}\\
-	\hline
-\end{tabular}
-\newpage
+
+
+%\subsection{Krümmung \& Krümmungskreisradius\formelbuch{45}}
+%\begin{tabular}{|l|l|l|}
+%	\hline
+%	& mit Kurvenlägenparameter & ohne Kurvenlängenparameter\\
+%	\hline
+%	Krümmung &
+%	$\kappa(s)=|f''(s)|$ &
+%	\begin{minipage}{5cm}
+%    	\vspace{0.1cm}
+%		$\kappa(t)=\dfrac{|f'(t) \times f''(t)|}{|f'(t)|^3}$\\ 
+%		\vspace{0.1cm}
+%    \end{minipage}\\	
+%	\hline
+%	Krümmungskreisradius &
+%	$r(s)=\dfrac{1}{\kappa(s)}=\dfrac{1}{|f''(s)|}$ &
+%	\begin{minipage}{5cm}
+%    	\vspace{0.1cm}
+%		$r(t)=\dfrac{1}{\kappa(t)}=\dfrac{|f'(t)|^3}{|f'(t) \times
+%		f''(t)|}$    
+%		\vspace{0.1cm}
+%    \end{minipage}\\
+%	\hline
+%\end{tabular}
+%\newpage
