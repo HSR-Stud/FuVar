@@ -1,116 +1,125 @@
 \section{Vektorfelder\formelbuch{82}}
-Ein Vektorfeld ist eine Abbildung $\vec{v}:\mathbb{R}^n\rightarrow
-\mathbb{R}^n$, welche jedem Punkt des Raumes einen Vektor anheftet.
+  Ein Vektorfeld ist eine Abbildung $\vec{v}:\mathbb{R}^n\rightarrow
+  \mathbb{R}^n$, welche jedem Punkt des Raumes einen Vektor anheftet.
+  
 \subsection{Wegintegral\formelbuch{83}}
-Ist $\vec{F}$ ein Vektorfeld und $C:\vec{c}=\vec{c}(t),a\leq t \leq b$ eine
-Kurve, dann wird das Wegintegral wie folgt berechnet:\\\\
-$\boxed{\int\limits_C\vec{F}\cdot d\vec{s}=
-\int\limits_a^b\vec{F}(\vec{c}(t))\cdot \dot{\vec{c}}(t)\cdot dt}$\\\\
-Tipp: Wenn c bspw. eine gerade Linie vom Punkt (-1;0) bis (1;0) ist, dann ist:\\
-$\vec{c}(t)=
+  Ist $\vec{F}$ ein Vektorfeld und $C:\vec{c}=\vec{c}(t),a\leq t \leq b$ eine
+  Kurve, dann wird das Wegintegral wie folgt berechnet:\\\\
+  $\boxed{\int\limits_C\vec{F}\cdot d\vec{s}=
+  \int\limits_a^b\vec{F}(\vec{c}(t))\cdot \dot{\vec{c}}(t)\cdot dt}$
+  z.B: $\vec{F}=\begin{pmatrix}
+    -y \\
+    x \\
+    z
+  \end{pmatrix}$ und $\vec c = \begin{pmatrix}
+    1t \\
+    3t \\
+    5t 
+  \end{pmatrix} \Rightarrow \int\begin{pmatrix}
+    -3t\\
+    1t \\
+    5t
+  \end{pmatrix} \cdot \begin{pmatrix}
+    1\\
+    3\\
+    5
+  \end{pmatrix} dt$
+  \\\\
+  Tipp: Wenn c bspw. eine gerade Linie vom Punkt (-1;0) bis (1;0) ist, dann ist:\\
+  $\vec{c}(t)=
   \begin{pmatrix}
-      x(t)\\
-      y(t)\\
+    x(t)\\
+    y(t)\\
   \end{pmatrix}
   =
-    \begin{pmatrix}
-      t\\
-      0\\
+  \begin{pmatrix}
+    t\\
+    0\\
   \end{pmatrix}$
   mit $-1\leq t \leq 1$
 
-\textbf{Eigenschaften des Wegintegrals}
-\begin{itemize}
-  \item Ist $C$ eine geschlossene Kurve, also $\vec{c}(a)=\vec{c}(b)$, spricht
-  man von einem \textbf{Umlaufintegral} und verwendet folgende Definition:
-  $\oint\limits_C \vec{F}\cdot d\vec{s}$
-  \item Ist $C=C_1+C_2$ gilt folgendes:$\quad\int\limits_C \vec{F}\cdot
-  d\vec{s}=\int\limits_{C_1} \vec{F}\cdot d\vec{s}+\int\limits_{C_2}
-  \vec{F}\cdot d\vec{s}$
-  \item Wird $C$ in Gegenrichtung durchlaufen gilt folgendes:
-  $\quad\int\limits_C \vec{F}\cdot
-  d\vec{s}=-\int\limits_{-C} \vec{F}\cdot d\vec{s}$
-\end{itemize}
+  \textbf{Eigenschaften des Wegintegrals}
+  \begin{itemize}
+    \item Ist $C$ eine geschlossene Kurve, also $\vec{c}(a)=\vec{c}(b)$, spricht
+    man von einem \textbf{Umlaufintegral} und verwendet folgende Definition:
+    $\oint\limits_C \vec{F}\cdot d\vec{s}$
+    \item Ist $C=C_1+C_2$ gilt folgendes:$\quad\int\limits_C \vec{F}\cdot
+    d\vec{s}=\int\limits_{C_1} \vec{F}\cdot d\vec{s}+\int\limits_{C_2}
+    \vec{F}\cdot d\vec{s}$
+    \item Wird $C$ in Gegenrichtung durchlaufen gilt folgendes:
+    $\quad\int\limits_C \vec{F}\cdot
+    d\vec{s}=-\int\limits_{-C} \vec{F}\cdot d\vec{s}$
+  \end{itemize}
 
 \subsection{Konservative Felder / Potentialfelder\formelbuch{83}}
-Ein Vektorfeld $\vec{F}$ heisst \textit{konservativ}, wenn das Wegintegral
-unabhängig vom gewählten Weg ist.\\\\
-$\Rightarrow\qquad \boxed{\oint_C \vec{F}\cdot d\vec{s}=0}\qquad\boxed{
-\int\limits_{Weg_1\, A\rightarrow B} \vec{F}\cdot d\vec{s}=\int\limits_{Weg_2\,
-A\leadsto B} \vec{F}\cdot d\vec{s}=\int\limits_A^B \vec{F}\cdot
-d\vec{s}}\qquad\boxed{\rotation (\vec{F})=0}$\\\\\\	
-\textbf{Es gelten folgende Sätze:}
-Für ein Vektorfeld $\vec{F}$ im zwei- oder dreidimensionalen Koordinatensystem
-gilt in einem Bereich ohne "`durchgehende Löcher"', d.h. in dem sich jede
-geschlossene Kurve auf einen Punkt zusammenziehen lässt:
-\begin{itemize}
-  \item $\vec{F}$ ist konservativ, d.h die Kurvenintegrale wegunabhängig.
-  \item $\vec{F}$ ist ein Gradientenfeld, d.h. es gibt ein Potential
-  $\Phi(x_1,\ldots,x_n)$ mit $\vec{F}=\gradient \Phi(\vec{x}(t))$.
-  \item $\vec{F}$ erfüllt die sogenannte(n)
-  \textbf{Integrabilitätsbedingung(en)}, d.h. im
+  Ein Vektorfeld $\vec{F}$ heisst \textit{konservativ}, wenn das Wegintegral
+  unabhängig vom gewählten Weg ist.\\\\
+  $\Rightarrow\qquad \boxed{\oint_C \vec{F}\cdot d\vec{s}=0}\qquad\boxed{
+  \int\limits_{Weg_1\, A\rightarrow B} \vec{F}\cdot d\vec{s}=\int\limits_{Weg_2\,
+  A\leadsto B} \vec{F}\cdot d\vec{s}=\int\limits_A^B \vec{F}\cdot
+  d\vec{s}}\qquad\boxed{\rotation (\vec{F})=0}$\\\\\\	
+  \textbf{Es gelten folgende Sätze:}
+  Für ein Vektorfeld $\vec{F}$ im zwei- oder dreidimensionalen Koordinatensystem
+  gilt in einem Bereich ohne "`durchgehende Löcher"', d.h. in dem sich jede
+  geschlossene Kurve auf einen Punkt zusammenziehen lässt:
   \begin{itemize}
-    \item zweidimensionalen Fall die Gleichung $\frac{\partial F_1}{\partial
-    x_2}=\frac{\partial F_2}{\partial x_1}$,
-    \item dreidimensionalen Fall die Gleichungen $\frac{\partial F_1}{\partial
-    x_2}=\frac{\partial F_2}{\partial x_1}$, $\frac{\partial F_2}{\partial
-    x_3}=\frac{\partial F_3}{\partial x_2}$, $\frac{\partial F_3}{\partial
-    x_1}=\frac{\partial F_1}{\partial x_3}$
+    \item $\vec{F}$ ist konservativ, d.h die Kurvenintegrale wegunabhängig.
+    \item $\vec{F}$ ist ein Gradientenfeld, d.h. es gibt ein Potential
+    $\Phi(x_1,\ldots,x_n)$ mit $\vec{F}=\gradient \Phi(\vec{x}(t))$.
+    \item $\vec{F}$ erfüllt die sogenannte(n)
+    \textbf{Integrabilitätsbedingung(en)}(dient zur Überprüfung ob es konservativ ist), d.h. im
+    \begin{itemize}
+      \item zweidimensionalen Fall die Gleichung $\frac{\partial F_1}{\partial
+      x_2}=\frac{\partial F_2}{\partial x_1}$,
+      \item dreidimensionalen Fall die Gleichungen $\frac{\partial F_1}{\partial
+      x_2}=\frac{\partial F_2}{\partial x_1}$, $\frac{\partial F_2}{\partial
+      x_3}=\frac{\partial F_3}{\partial x_2}$, $\frac{\partial F_3}{\partial
+      x_1}=\frac{\partial F_1}{\partial x_3}$
+    \end{itemize}
   \end{itemize}
-\end{itemize}
-\textbf{und}
-\begin{itemize}
-  \item Ist $\vec{F}=\gradient \Phi(\vec{x}(t))$, dann ist $\vec{F}$  
-  \textit{konservativ} und es gilt: $\quad\int\limits_r^s \vec{F}\cdot d\vec{x}
-  dt=\Phi(\vec{x}(s))-\Phi(\vec{x}(r))$
-  \item Ist $\vec{F}$ \textit{konservativ}, dann gibt es eine Funktion
-  $\Phi(x_1,\ldots,x_n)$ so, dass $\vec{F}=\gradient \Phi(\vec{x}(t))=
-  \begin{pmatrix}
-    \Phi_{x_1}\\
-    \vdots\\ 
-    \Phi_{x_n}
-  \end{pmatrix}$.
+  \textbf{und}
+  \begin{itemize}
+    \item Ist $\vec{F}=\gradient \Phi(\vec{x}(t))$, dann ist $\vec{F}$  
+    \textit{konservativ} und es gilt: $\quad\int\limits_r^s \vec{F}\cdot d\vec{x}
+    dt=\Phi(\vec{x}(s))-\Phi(\vec{x}(r))$
+    \item Ist $\vec{F}$ \textit{konservativ}, dann gibt es eine Funktion
+    $\Phi(x_1,\ldots,x_n)$ so, dass $\vec{F}=\gradient \Phi(\vec{x}(t))=
+    \begin{pmatrix}
+      \Phi_{x_1}\\
+      \vdots\\ 
+      \Phi_{x_n}
+    \end{pmatrix}$.
 
-\end{itemize}
-\newpage
-\subsection{Rotation\formelbuch{86 \& 92}}
-Interpretiert man dieses Feld als Strömungsfeld, so gibt die Rotation für jeden
-Ort an, wie schnell und um welche Achse ein mitschwimmender Körper rotieren
-würde. Ein Vektorfeld, dessen Rotation überall null ist, nennt man
-\textit{wirbelfrei}.\\\\
-\begin{minipage}{8cm}
-	\textbf{2-Dimensional}\\\\
-	$\boxed{\rotation(u,v)=\fprt{v}{x}-\fprt{u}{y}}$
-\end{minipage}
-\begin{minipage}{8cm}
-	\textbf{3-Dimensional}\\\\
-	$\boxed{\rotation(u,v,w)=\bigtriangledown\times
-	\vec{v}=
-	\begin{pmatrix}
-    	\partial_x\\
-    	\partial_y\\
-    	\partial_z
-    \end{pmatrix}\times
-	\begin{pmatrix}
-    	v_x\\
-    	v_y\\
-    	v_z
-    \end{pmatrix}=
-	\begin{pmatrix}
-    	\fsprt{y}{w}-\fsprt{z}{v}\\
-    	\fsprt{z}{u}-\fsprt{x}{w}\\
-    	\fsprt{x}{v}-\fsprt{y}{u}
-    \end{pmatrix}}$
-\end{minipage} \\
+  \end{itemize}
 
-\subsection{Divergenz\formelbuch{96}}
-Interpretiert man dieses Feld als Strömungsfeld, so gibt die Divergenz für jede
-Stelle die Tendenz an, ob ein Teilchen in der Nähe zu diesem Punkt hin- bzw.
-von diesem Punkt wegfließt. Es sagt damit aus, ob und wo das Vektorfeld Quellen
-(Divergenz größer als Null) oder Senken (Divergenz kleiner als Null) hat. Ist
-die Divergenz überall gleich Null, so bezeichnet man das Feld als
-\textit{quellenfrei}.\\\\
-$\boxed{\divergenz \vec{v}=\bigtriangledown\circ \vec{v}=
+
+\subsection{Rotation}
+  Interpretiert man dieses Feld als Strömungsfeld, so gibt die Rotation für jeden
+  Ort an, wie schnell und um welche Achse ein mitschwimmender Körper rotieren
+  würde. Ein Vektorfeld, dessen Rotation überall null ist, nennt man
+  \textit{wirbelfrei}.\\\\
+  \begin{minipage}{8cm}
+    	\textbf{2-Dimensional}\\\\
+    	$\boxed{\rotation(u,v)=\fprt{v}{x}-\fprt{u}{y}}$
+  \end{minipage}
+  \begin{minipage}{8cm}
+	  \textbf{3-Dimensional}\\\\
+    	$\boxed{\rotation(\vec F)=\bigtriangledown\times\vec{F} = 
+    	\begin{pmatrix}
+    	  (F_3)_y - (F_2)_z\\
+    	  (F_1)_z - (F_3)_x\\
+    	  (F_2)_x - (F_1)_y
+    	\end{pmatrix}}$
+  \end{minipage} \\
+
+\subsection{Divergenz}
+  Interpretiert man dieses Feld als Strömungsfeld, so gibt die Divergenz für jede
+  Stelle die Tendenz an, ob ein Teilchen in der Nähe zu diesem Punkt hin- bzw.
+  von diesem Punkt wegfließt. Es sagt damit aus, ob und wo das Vektorfeld Quellen
+  (Divergenz größer als Null) oder Senken (Divergenz kleiner als Null) hat. Ist
+  die Divergenz überall gleich Null, so bezeichnet man das Feld als
+  \textit{quellenfrei}.\\\\
+  $\boxed{\divergenz \vec{F}=\bigtriangledown\circ \vec{F}=
 	\begin{pmatrix}
     	\partial_{x_1}\\
     	\vdots\\
@@ -120,14 +129,13 @@ $\boxed{\divergenz \vec{v}=\bigtriangledown\circ \vec{v}=
     	v_{x_1}\\
     	\vdots\\
     	v_{x_n}
-    \end{pmatrix}=
-\sum\limits_{i=1}^n \fprt{v_i}{x_i}}$
+  \end{pmatrix}=
+  \sum\limits_{i=1}^n \fprt{v_i}{x_i}}$
 
-\subsection{Fluss\formelbuch{93}}
-Der Fluss des Vektorfeldes $\vec{v}$ durch das Flächenstück G mit
-Parametrisierung $f:U\rightarrow\mathbb{R}^3$ ist:\\\\
-$\boxed{\iint\limits_G\vec{v}\cdot d\vec{n}=\iint\limits_U \vec{v}\cdot
-(\sprt{u}\times\sprt{v}) dudv}$
+\subsection{Fluss}
+  Der Fluss des Vektorfeldes $\vec{v}$ durch das Flächenstück G mit
+  Parametrisierung $f:U\rightarrow\mathbb{R}^3$ ist:\\\\
+  $\boxed{\lim\limits_{\Delta A \to 0}\sum \vec F \bullet \Delta\vec A = \int\limits_A \vec F \cdot \vec{\Delta A}}$
 
 \subsection{Integralsätze}
 	\begin{tabular}{|p{0.4cm}||p{4cm}|p{5.7cm}|p{7cm}|}
@@ -136,7 +144,7 @@ $\boxed{\iint\limits_G\vec{v}\cdot d\vec{n}=\iint\limits_U \vec{v}\cdot
 	\hline
 	\hline
 	\begin{sideways}2-D \qquad \end{sideways} &
-  	Die Greensche Formel \formelbuch{88} &
+  	Die Greensche Formel &
 	\begin{minipage}{6.7cm}
 	    \vspace{0.1cm}
 		$\int\limits_{\partial G}\vec{v}\cdot d\vec{s}=\iint\limits_G \rotation
@@ -151,7 +159,7 @@ $\boxed{\iint\limits_G\vec{v}\cdot d\vec{n}=\iint\limits_U \vec{v}\cdot
     \end{minipage}\\
 	\hline
 	\begin{sideways}3-D \qquad \end{sideways} &
-	Der Satz von Stokes \formelbuch{94} &
+	Der Satz von Stokes &
 	\begin{minipage}{6.7cm}
     	\vspace{0.1cm}
 		$\int\limits_{\partial G}\vec{v}\cdot d\vec{s}=\iint\limits_G \rotation
@@ -166,11 +174,10 @@ $\boxed{\iint\limits_G\vec{v}\cdot d\vec{n}=\iint\limits_U \vec{v}\cdot
     \end{minipage}\\
 	\hline
 	\begin{sideways}3-D \qquad \end{sideways} &
-	Der Satz von Gauss \formelbuch{96} &
+	Der Satz von Gauss  &
 	\begin{minipage}{6.7cm}
 	    \vspace{0.1cm}
-		$\iint\limits_{\partial V}\vec{v}\cdot d\vec{n}=\iiint\limits_V \divergenz
-		\vec{v}\cdot dV$			    
+		$\int\limits_V \div\vec F dV = \oint\limits_{\partial V} \vec F \bullet \vec{dA}$			    
 	    \vspace{0.1cm}   
     \end{minipage}&
 	\begin{minipage}{7cm}

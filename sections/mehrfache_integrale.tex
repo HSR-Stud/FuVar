@@ -1,4 +1,4 @@
-\section{Mehrfache Integrale \formelbuch{67}}
+\section{Mehrfache Integrale \formelbuch{50}}
 \subsection{Oberflächenberechnung\formelbuch{73}}
 \begin{tabular}{|p{5.5 cm}|p{10cm}|}
 	\hline
@@ -46,7 +46,7 @@
 		$M = 2\pi\int\limits_0^h\varrho(z)\sqrt{1+\varrho'(z)^2}\cdot dz$
     	\vspace{0.1cm}
     \end{minipage}\\
-	\hline
+	\hline/
 	Polarkoordinaten &
 	\begin{minipage}{10cm}
     	\vspace{0.1cm}
@@ -56,61 +56,104 @@
 	\hline
 \end{tabular}
 
-\subsection{Volumenberechnung\formelbuch{67 \& 76}}
-\begin{tabular}{|p{6 cm}|p{10cm}|}
-	\hline
-	Allgemein mit Variablentransformation &
-	\begin{minipage}{10cm}
-    	\vspace{0.1cm}
-		$V=\iiint\limits_G f(x,y,z)\cdot dxdydz=\iiint\limits_G f(g(u,v,w))\cdot
-		\textcolor{blue}{detDf}\cdot dudvdw$
-    	\vspace{0.1cm}
-    \end{minipage}\\
-	\hline
-	Zylinderkoordinaten &
-	\begin{minipage}{10cm}
-    	\vspace{0.1cm}
-		$V=\iiint\limits_G f(r,\varphi,z)\cdot \textcolor{blue}{r} \cdot
-		dr d\varphi dz$
-    	\vspace{0.1cm}
-    \end{minipage}\\
-	\hline
-	Kugelkoordinaten &
-	\begin{minipage}{10cm}
-    	\vspace{0.1cm}
-		$V=\iiint\limits_G f(r,\varphi,\vartheta)\cdot \textcolor{blue}{r^2
-		\cos\vartheta} \cdot dr d\varphi d\vartheta$
-    	\vspace{0.1cm}
-    \end{minipage}\\
-	\hline	
-\end{tabular}
-
-\subsection{Schwerpunkt\formelbuch{78} und Trägheitsmoment\formelbuch{79} }
-$\boxed{\vec{S}=\begin{pmatrix}
-	x_s\\
-	y_s\\
-	z_s                                            
-\end{pmatrix}=\frac{1}{M}\iiint\limits_G \varrho(x,y,z) \cdot
-\begin{pmatrix}
-	x\\
-	y\\
-	z                                            
-\end{pmatrix}\cdot dxdydz \quad M=\iiint\limits_G \varrho(x,y,z) \cdot
-dxdydz}$\\
-
-$x_s=\frac{1}{M} \int\limits_F x \cdot \varrho(x,y,z)\cdot dV\\
-y_s=\frac{1}{M} \int\limits_F y \cdot \varrho(x,y,z)\cdot dV\\$
-mit $\varrho$ konstant und Objekt nur Platte ($z$ entfaellt):\\
-$
-x_s=\frac{1}{F} \int\limits_F x\cdot dF = \frac{1}{F} \int\limits_a^b
-x(y_0(x)-y_u(x))\cdot dx\\
-y_s=\frac{1}{F} \int\limits_F y\cdot dF = \frac{1}{2F} \int\limits_a^b
-(y_0^2(x)-y_u^2(x))\cdot dx$\\
-
-$\boxed{I=\iiint\limits_G \varrho(x,y,z)\cdot
-\underbrace{(x^2+y^2)}_{k}\cdot
-dxdydz}\quad k$ entspricht dem Abstand zur Rotationsachse hier die $Z$-Achse
+\subsection{Volumenberechnung\formelbuch{55/56/66}}
+  \begin{multicols}{2}
+    $\boxed{\int\limits_{x_{min}}^{x_{max}}\int\limits_{y_{min}(x)}^{y_{max}(x)}f(x;y) dy dx =
+    \int\limits_{y_{min}}^{y_{max}}\int\limits_{x_{min}(y)}^{x_{max}(y)}f(x;y) dx dy }$\\
+    $\boxed{V = \int\limits_{x_{min}}^{x_{max}}\int\limits_{y_{min}(x)}^{y_{max}(x)}f(x;y) dy dx}$ \\
+    
+  \columnbreak
+    $\boxed{\int\limits_{x_{1_{min}}}^{x_{1_{max}}}\int\limits_{x_{2_{min}}(x_1)}^{x_{2_{max}}(x_1)}\ldots 
+    \int\limits_{x_{m_{min}}(x_1;\ldots;x_m)}^{x_{m_{max}}(x_1;\ldots;x_m)}f(x_1;\ldots;x_m)dx_m \ldots dx_2 dx_1}$ \\
+    $\boxed{V = \int\limits_V dV = \int\limits_{x_{1_{min}}}^{x_{1_{max}}} \int\limits_{x_{2_{min}}(x_1)}^{x_{2_{max}}(x_1)}
+    \int\limits_{x_{3_{min}}(x_1;x_2)}^{x_{3_{max}}(x_1;x_2)}1 dx_3 dx_2 dx_1}$
+  \end{multicols}
 
 
+\subsection{Schwerpunkt}
+  \begin{multicols}{2}
+    \subsubsection{einer dünnen ebener Platte\formelbuch{59}}
+      \textbf{inhomogen}:\\
+        $x_s=\frac{1}{M} \int\limits_F x \cdot \varrho(x,y,z)\cdot dF$\\
+        $y_s=\frac{1}{M} \int\limits_F y \cdot \varrho(x,y,z)\cdot dF$\\
+      \textbf{homogen}:\\
+        mit $\varrho$ konstant und Objekt nur Platte ($z$ entfaellt):\\
+        $x_s=\frac{1}{F} \int\limits_F x\cdot dF = \frac{1}{F} \int\limits_a^b
+        x(y_0(x)-y_u(x))\cdot dx$ \\
+        $y_s=\frac{1}{F} \int\limits_F y\cdot dF = \frac{1}{2F} \int\limits_a^b
+        (y_0^2(x)-y_u^2(x))\cdot dx$ \\
+    \columnbreak
+    
+    \subsubsection{von Körpern\formelbuch{67}}
+      \textbf{inhomogen}: \\
+        $x_s = \frac{1}{M}\int\limits_V x \cdot \varrho(x;y;z) dV \qquad$ analog für $y_s$ und $z_s$\\
+      \textbf{homogen}: \\
+        $x_s = \frac{1}{V}\int\limits_V x dV \qquad$ analog für $y_s$ und $z_s$\\
+      
+      $M$ = totale Masse\\
+      $F$ = Fläche
+  \end{multicols}
+  
+\subsection{Trägheitsmoment\formelbuch{67}}
+  $J = \int\limits_V \varrho(x;y;z) \cdot [r(x;y;z)]^2 dV$ \\
+  Für homogene Körper gilt: $J = \varrho \int\limits_V \underbrace{(x^2+y^2)}_{r^2}dV$
+
+\subsection{Koordinatentransformation\formelbuch{62/64/67}}
+  $\int\limits_B f(x;y) dF = \int\limits_B \underbrace{f(x(u;v); y(x;v))}_{\tilde{f}(u;v)} \cdot Korrekturfaktor(u;v) \tilde{dF}$
+  
+  $\int\limits_B f(x;y) dF = \int\limits_B \underbrace{f(x(u;v); y(x;v))}_{\tilde{f}(u;v)} \cdot 
+  \left|\left|\dfrac{\partial (x;y)}{\partial (u;v)}\right|\right| \tilde{dF}$
+  
+  $\int\limits_B f(x_1;\ldots;x_m) dB = \int\limits_{\tilde{B}} 
+  \underbrace{f(x_1(u_1;\ldots;u_m);\ldots; x_m(u_1;\ldots;u_m))}_{\tilde{f}(u_1;\ldots;u_m)} \cdot 
+  \left|\left|\dfrac{\partial (x_1;\ldots;x_m)}{\partial (u_1;\ldots;u_m)}\right|\right| \tilde{dB}$ \\
+  
+  Der Korrekturfaktor ist der Betrag der Jacobideterminante $|detDf|$
+  
+  \subsubsection{Jacobimatrix (Funktionalmatrix)\formelbuch{63/67}}
+    \begin{tabular}{|l|l|l|}
+      \hline
+        Jacobimatrix ($Df$): &
+        $\dfrac{\partial(x,y)}{\partial(u,v)} = \begin{pmatrix}
+          x_u & x_v \\
+          y_u & y_v
+        \end{pmatrix}$ &
+
+        $\dfrac{\partial (x_1;\ldots;x_m)}{\partial (u_1;\ldots;u_m)} = \begin{pmatrix}
+          \frac{\partial x_1}{\partial u_1} & 
+          \ldots & 
+          \frac{\partial x_1}{\partial u_m} \\
+    
+          \vdots & & \vdots \\
+    
+          \frac{\partial x_m}{\partial u_1} & 
+          \ldots & 
+          \frac{\partial x_m}{\partial u_m}
+        \end{pmatrix} $ \\
+      \hline
+        Jacobideterminante ($detDf$): &
+        $\left|\dfrac{\partial(x,y)}{\partial(u,v)}\right| = \begin{vmatrix}
+          x_u & x_v \\
+          y_u & y_v
+        \end{vmatrix}$ &
+      
+        $\left|\dfrac{\partial (x_1;\ldots;x_m)}{\partial (u_1;\ldots;u_m)}\right| = \begin{vmatrix}
+          \frac{\partial x_1}{\partial u_1} & 
+          \ldots & 
+          \frac{\partial x_1}{\partial u_m} \\
+    
+          \vdots & & \vdots \\
+    
+          \frac{\partial x_m}{\partial u_1} & 
+          \ldots & 
+          \frac{\partial x_m}{\partial u_m}
+        \end{vmatrix} $\\
+      \hline
+    \end{tabular}
+    
+    
+    
+  \input{sections/koordinatensysteme}
+    
 
 
