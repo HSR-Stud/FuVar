@@ -1,24 +1,32 @@
 \section{Skalare Funktionen ($\mathbb{R}^n \rightarrow \mathbb{R}$)}
 
 \subsection{Ableitungen}
-\begin{tabular}{|p{6cm}|p{5.5cm}|p{6.5cm}|}
+\begin{tabular}{|p{5.3cm}|p{6.5cm}|p{6.5cm}|}
   \hline
-    \textbf{partielle Ableitung\formelbuch{11}} & \textbf{Gradient\formelbuch{22/46}} & \textbf{Richtungsableitung\formelbuch{20/46}}\\
+    \textbf{partielle Ableitung\formelbuch{11/28}} & \textbf{Gradient\formelbuch{22/46}} & \textbf{Richtungsableitung\formelbuch{20/46}}\\
   \hline
-    $\dprt{x_1}(x_1,\ldots,x_m)= f_{x1}(x_1,\ldots,x_m)$ & 
+    $\dprt{x}(x_0;y_0) := f_x(x_0;y_0)$ &
     
-    $\gradient f(x_1,\ldots,x_m)= \begin{pmatrix}
+    $\gradient f(x_0,y_0)= \begin{pmatrix}
       f_x(x_0;y_0) \\ 
       f_y(x_0;y_0)
     \end{pmatrix} $ &
-
-	  Allgemein:  \newline  %\\\vspace{0.1cm}
+    
+    An der Stelle $(x_0;y_0)$ \newline    
+    $\dprt{\vec{r}}(x_0;y_0)=\gradient f(x_0;y_0) \bullet \vec{r}$ \\
+  \hline
+    $\fprt{^2f}{x^2}(x;y) = f_{xx}(x;y)$ \newline
+    $\fprt{^2f}{x\partial y}(x;y) = f_{xy}(x;y) = f_{yx}(x;y)$ \newline
+    $\fprt{^2f}{y^2}(x;y) = f_{yy}(x;y)$ &
+    
+    $\gradient f(x_1; \ldots;x_m) = \begin{pmatrix}
+      f_{x_1}(x_1; \ldots;x_m)\\
+      \vdots \\
+      f_{x_m}(x_1; \ldots;x_m)
+    \end{pmatrix}$ & 
+    
     $\dprt{\vec{r}}(x_1, \ldots, x_m)=\gradient f(x_1, \ldots, x_m)
-    \bullet \vec{r}$ \newline
-    \vspace{0.3cm}
-	  an der Stelle $(x_0;y_0)$: \newline
-	  \vspace{0.1cm}
-	    $\dprt{\vec{r}}(x_0;y_0)=\gradient f(x_0;y_0) \bullet \vec{r}$ \\
+    \bullet \vec{r}$ \\
   \hline
     partielle Ableitung der Funktion $f$ nach dem Parameter $x_1$ &
     
@@ -232,33 +240,61 @@ $\boxed{\vec{n}(x_0,y_0)=
       \end{itemize}
   \end{itemize}
 
-\subsubsection{Extremstellen auf Randwerten \formelbuch{38}}
-\begin{tabular}{lll}
-	\begin{minipage}{3.5cm}
-		$\boxed{\gradient f - \lambda \gradient g = 0}$		
-	\end{minipage} &
-	\begin{minipage}{4.7cm}
-		$f: $ zu maximierende Funktion\\
-		$g: $ Funktion des Randes	
-    \end{minipage} &
-	\begin{minipage}{11cm}
-		1. Gleichung unter der Bedingung  $g=0$ auflösen\\
-		2. Lösungen durch einsetzen in $f$ auf Min o. Max untersuchen
-    \end{minipage}
-\end{tabular}
+%\subsubsection{Extremstellen auf Randwerten \formelbuch{38}}
+%\begin{tabular}{lll}
+%	\begin{minipage}{3.5cm}
+%		$\boxed{\gradient f - \lambda \gradient g = 0}$		
+%	\end{minipage} &
+%	\begin{minipage}{4.7cm}
+%		$f: $ zu maximierende Funktion\\
+%		$g: $ Funktion des Randes	
+%    \end{minipage} &
+%	\begin{minipage}{11cm}
+%		1. Gleichung unter der Bedingung  $g=0$ auflösen\\
+%		2. Lösungen durch einsetzen in $f$ auf Min o. Max untersuchen
+%    \end{minipage}
+%\end{tabular}
 
 
 \subsection{Extremalprobleme mit Nebenbedingungen}
-\textbf{Zwei Dimensionen}\\
-Gegeben: $f(x;y)$ unter der Nebenbedingung $n(x;y) = 0$\\
-So kommen folgende Punkte von $f$ in Frage:
-\begin{enumerate}
-  \item Randpunkte von $\mathbb{D}_f$ wenn sie die Nebenbedingungen  $n(x;y) = 0$ erfüllen.
-  \item Punkte, in denen der Gradientenvektor $\gradient f $ und / oder $\gradient n$ nicht existiert, und die Nebenbedingung nicht erfüllt ist,
-  \item Lösungen des Gleichungsystems\\
-  $ \begin{vmatrix}
-      f_x(x;y) \cdot n_y(x;y) = f_y(x;y) \cdot n_x(x;y) \\
-      n(x;y) = 0
-    \end{vmatrix} $
-   \item Lösung in $f(x,y)$ einsetzen und untersuchen!
-\end{enumerate}
+  \textbf{Zwei Variablen\formelbuch{42}}\\
+  Gegeben: $f(x;y)$ unter der Nebenbedingung $n(x;y) = 0$\\
+  So kommen folgende Punkte von $f$ in Frage:
+  \begin{enumerate}
+    \item 
+      Randpunkte von $\mathbb{D}_f$ wenn sie die Nebenbedingungen  $n(x;y) = 0$ erfüllen und zu $\mathbb{D}_f$ gehören.
+    \item 
+      Punkte, in denen der Gradientenvektor $\gradient f $ und / oder $\gradient n$ nicht existieren, und die Nebenbedingung
+      $n(x;y) = 0$ erfüllen.
+    \item 
+      Lösungen des Gleichungsystems\\
+      $ \begin{vmatrix}
+        f_x(x;y) \cdot n_y(x;y) = f_y(x;y) \cdot n_x(x;y) \\
+        n(x;y) = 0
+     \end{vmatrix} $
+   \item 
+     Lösung in $f(x,y)$ einsetzen und untersuchen!
+ \end{enumerate}
+ 
+\newpage 
+ 
+  
+ \textbf{m Variablen\formelbuch{49}}\\
+ Falls eine Funktion $f(x_1;\ldots;x_m)$ unter den $k(<m)$ Nebenbedingungen $n_1(x_1;\ldots;x_m)=0, \ldots, n_m(x_1;\ldots;x_m)=0$
+ Maximal- oder Minimalstellen besitzt, kommen folgende Punkte in Frage:\\
+ \begin{enumerate}
+   \item
+     Randpunkte von $\mathbb{D}_f$ falls sie zu $\mathbb{D}_f$ gehören und die Nebenbedingungen gleich 0 erfüllen.
+   \item
+     Punkte in denen (mindestens) einer der Gradientenvektoren $\gradient f, \gradient n_1, \ldots, \gradient n_k$ nicht existieren
+     oder in denen die $k$ Vektoren $\gradient n_1, \ldots, \gradient n_k$ linear abhängig sind und die Nebenbedingungen erfüllen.
+   \item
+     Lösungen des $(m+k)\times(m+k)$ Gleichungssystems:\\
+     $\begin{vmatrix}
+       \gradient f(x_1;\ldots;x_m) & = & \lambda_1 \cdot \gradient n_1(x_1;\ldots;x_m)+ \ldots + \\
+       & & +\lambda_k \cdot \gradient n_k(x_1;\ldots;x_m) \\
+       n_1(x_1;\ldots;x_m) = 0 \\
+       \vdots \\
+       n_k(x_1;\ldots;x_m) = 0
+     \end{vmatrix}$
+ \end{enumerate}
