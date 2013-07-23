@@ -1,0 +1,27 @@
+\section{Diverses}
+
+\subsection{Rechenregeln für div, rot, grad, $\Delta$}
+\begin{minipage}{9cm}
+Sei $D \in \mathbb{R}^3, f \in C^2(D,\mathbb{R}), \vec{v} \in C^2(D,\mathbb{R}^3)$. Dann gilt:
+\begin{itemize}
+	\item $\rotation(\gradient f) = 0 \qquad $ ``Gradientenfeld ist wirbelfrei''
+	\item $\divergenz(\rotation \vec{v}) = 0 \qquad $ ``Feld der Rotation ist quellfrei''
+	\item $\divergenz(\gradient f) = \Delta f$
+	\item $\divergenz(f\vec{v}) = (\gradient f) \cdot \vec{v} + f \divergenz \vec{v}$
+	\item $\rotation(f\vec{v}) = (\gradient f) \times \vec{v} + f \rotation \vec{v}$
+	\item $\rotation(\rotation \vec{v}) = \gradient(\divergenz \vec{v}) - \Delta \vec{v}$
+\end{itemize}
+(Laplace–Operator kompomentenweise anwenden!) .
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}[b]{6cm}
+\textbf{Laplace-Operator($\Delta$):}\\
+$\Delta=\vec\nabla^2= \sum_{k=1}^n {\partial^2\over \partial x_k^2}$\\\\
+\textbf{ Nabla-Operator($\nabla$):}\\
+$\vec\nabla = \left (\frac\partial{\partial x_1},\ldots, \frac\partial{\partial
+x_n}\right) $
+\end{minipage}
+
+\subsection{Eigenwerte}
+  Die Eigenwerte $\lambda$ erhält man folgendermassen ($I$ ist die Einheitsmatrix):\\
+  $|\lambda I - A| = 0 \qquad \Rightarrow$ nach $\lambda$ auflösen
