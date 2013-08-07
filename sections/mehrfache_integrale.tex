@@ -46,7 +46,7 @@
 		$M = 2\pi\int\limits_0^h\varrho(z)\sqrt{1+\varrho'(z)^2}\cdot dz$
     	\vspace{0.1cm}
     \end{minipage}\\
-	\hline/
+	\hline
 	Polarkoordinaten &
 	\begin{minipage}{10cm}
     	\vspace{0.1cm}
@@ -56,16 +56,24 @@
 	\hline
 \end{tabular}
 
+\subsection{Bereichsintegral\formelbuch{56}}
+\begin{multicols}{2}
+  $\boxed{\int\limits_{x_{min}}^{x_{max}}\int\limits_{y_{min}(x)}^{y_{max}(x)}f(x;y) dy dx =
+  \int\limits_{y_{min}}^{y_{max}}\int\limits_{x_{min}(y)}^{x_{max}(y)}f(x;y) dx dy }$
+  
+\columnbreak
+  $\boxed{\int\limits_{x_{1_{min}}}^{x_{1_{max}}}\int\limits_{x_{2_{min}}(x_1)}^{x_{2_{max}}(x_1)}\ldots 
+  \int\limits_{x_{m_{min}}(x_1;\ldots;x_m)}^{x_{m_{max}}(x_1;\ldots;x_m)}f(x_1;\ldots;x_m)dx_m \ldots dx_2 dx_1}$
+  
+\end{multicols}
+
+
 \subsection{Volumenberechnung\formelbuch{55/56/66}}
   \begin{multicols}{2}
-    $\boxed{\int\limits_{x_{min}}^{x_{max}}\int\limits_{y_{min}(x)}^{y_{max}(x)}f(x;y) dy dx =
-    \int\limits_{y_{min}}^{y_{max}}\int\limits_{x_{min}(y)}^{x_{max}(y)}f(x;y) dx dy }$\\
     $\boxed{V = \int\limits_{x_{min}}^{x_{max}}\int\limits_{y_{min}(x)}^{y_{max}(x)}f(x;y) dy dx}$ \\
     
   \columnbreak
-    $\boxed{\int\limits_{x_{1_{min}}}^{x_{1_{max}}}\int\limits_{x_{2_{min}}(x_1)}^{x_{2_{max}}(x_1)}\ldots 
-    \int\limits_{x_{m_{min}}(x_1;\ldots;x_m)}^{x_{m_{max}}(x_1;\ldots;x_m)}f(x_1;\ldots;x_m)dx_m \ldots dx_2 dx_1}$ \\
-    $\boxed{V = \int\limits_V dV = \int\limits_{x_{1_{min}}}^{x_{1_{max}}} \int\limits_{x_{2_{min}}(x_1)}^{x_{2_{max}}(x_1)}
+    $\boxed{V = \int\limits_V dV = \int\limits_{x_{1_{min}}}^{x_{1_{max}}}\int\limits_{x_{2_{min}}(x_1)}^{x_{2_{max}}(x_1)}
     \int\limits_{x_{3_{min}}(x_1;x_2)}^{x_{3_{max}}(x_1;x_2)}1 dx_3 dx_2 dx_1}$
   \end{multicols}
 
@@ -93,23 +101,27 @@
       $M$ = totale Masse\\
       $F$ = Fläche
   \end{multicols}
-  
+   
 \subsection{Trägheitsmoment\formelbuch{67}}
   $J = \int\limits_V \varrho(x;y;z) \cdot [r(x;y;z)]^2 dV$ \\
   Für homogene Körper gilt: $J = \varrho \int\limits_V \underbrace{(x^2+y^2)}_{r^2}dV$
 
+\newpage
+
 \subsection{Koordinatentransformation\formelbuch{62/64/67}}
-  $\int\limits_B f(x;y) dF = \int\limits_B \underbrace{f(x(u;v); y(x;v))}_{\tilde{f}(u;v)} \cdot Korrekturfaktor(u;v) \tilde{dF}$
-  
+  $\int\limits_B f(x;y) dF = \int\limits_B \underbrace{f(x(u;v); y(x;v))}_{\tilde{f}(u;v)} \cdot Korrekturfaktor(u;v)   
+  \tilde{dF}$
+    
   $\int\limits_B f(x;y) dF = \int\limits_B \underbrace{f(x(u;v); y(x;v))}_{\tilde{f}(u;v)} \cdot 
   \left|\left|\dfrac{\partial (x;y)}{\partial (u;v)}\right|\right| \tilde{dF}$
-  
+    
   $\int\limits_B f(x_1;\ldots;x_m) dB = \int\limits_{\tilde{B}} 
   \underbrace{f(x_1(u_1;\ldots;u_m);\ldots; x_m(u_1;\ldots;u_m))}_{\tilde{f}(u_1;\ldots;u_m)} \cdot 
   \left|\left|\dfrac{\partial (x_1;\ldots;x_m)}{\partial (u_1;\ldots;u_m)}\right|\right| \tilde{dB}$ \\
-  
+   
   Der Korrekturfaktor ist der Betrag der Jacobideterminante $|detDf|$
-  
+
+ 
   \subsubsection{Jacobimatrix (Funktionalmatrix)\formelbuch{63/67}}
     \begin{tabular}{|l|l|l|}
       \hline
@@ -150,7 +162,8 @@
         \end{vmatrix} $\\
       \hline
     \end{tabular}
-    
+  
+ 
     
     
   \input{sections/koordinatensysteme}

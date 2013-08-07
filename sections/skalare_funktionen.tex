@@ -255,8 +255,8 @@ $\boxed{\vec{n}(x_0,y_0)=
 %    \end{minipage}
 %\end{tabular}
 
-
 \subsection{Extremalprobleme mit Nebenbedingungen}
+\begin{multicols}{2}
   \textbf{Zwei Variablen\formelbuch{42}}\\
   Gegeben: $f(x;y)$ unter der Nebenbedingung $n(x;y) = 0$\\
   So kommen folgende Punkte von $f$ in Frage:
@@ -264,7 +264,8 @@ $\boxed{\vec{n}(x_0,y_0)=
     \item 
       Randpunkte von $\mathbb{D}_f$ wenn sie die Nebenbedingungen  $n(x;y) = 0$ erfüllen und zu $\mathbb{D}_f$ gehören.
     \item 
-      Punkte, in denen der Gradientenvektor $\gradient f $ und / oder $\gradient n$ nicht existieren, und die Nebenbedingung
+      Punkte, in denen der Gradientenvektor $\gradient f $ und / oder $\gradient n$ nicht existieren, 
+      und die Nebenbedingung
       $n(x;y) = 0$ erfüllen.
     \item 
       Lösungen des Gleichungsystems\\
@@ -275,19 +276,22 @@ $\boxed{\vec{n}(x_0,y_0)=
    \item 
      Lösung in $f(x,y)$ einsetzen und untersuchen!
  \end{enumerate}
+ \vfill
  
-\newpage 
- 
+\columnbreak
   
  \textbf{m Variablen\formelbuch{49}}\\
- Falls eine Funktion $f(x_1;\ldots;x_m)$ unter den $k(<m)$ Nebenbedingungen $n_1(x_1;\ldots;x_m)=0, \ldots, n_m(x_1;\ldots;x_m)=0$
+ Falls eine Funktion $f(x_1;\ldots;x_m)$ unter den $k(<m)$ Nebenbedingungen $n_1(x_1;\ldots;x_m)=0, 
+ \ldots, n_m(x_1;\ldots;x_m)=0$
  Maximal- oder Minimalstellen besitzt, kommen folgende Punkte in Frage:\\
  \begin{enumerate}
    \item
      Randpunkte von $\mathbb{D}_f$ falls sie zu $\mathbb{D}_f$ gehören und die Nebenbedingungen gleich 0 erfüllen.
    \item
-     Punkte in denen (mindestens) einer der Gradientenvektoren $\gradient f, \gradient n_1, \ldots, \gradient n_k$ nicht existieren
-     oder in denen die $k$ Vektoren $\gradient n_1, \ldots, \gradient n_k$ linear abhängig sind und die Nebenbedingungen erfüllen.
+     Punkte in denen (mindestens) einer der Gradientenvektoren $\gradient f, \gradient n_1, \ldots, \gradient n_k$ 
+     nicht existieren
+     oder in denen die $k$ Vektoren $\gradient n_1, \ldots, \gradient n_k$ linear abhängig sind und 
+     die Nebenbedingungen erfüllen.
    \item
      Lösungen des $(m+k)\times(m+k)$ Gleichungssystems:\\
      $\begin{vmatrix}
@@ -297,4 +301,8 @@ $\boxed{\vec{n}(x_0,y_0)=
        \vdots \\
        n_k(x_1;\ldots;x_m) = 0
      \end{vmatrix}$
+   \item
+     Lösungen in $f(x_1;\ldots;x_m)$ einsetzen.
  \end{enumerate}
+
+\end{multicols}
